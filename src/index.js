@@ -3,8 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
+import store from './store';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 
 require('dotenv').config()
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+    <HashRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </HashRouter>, document.getElementById('root'));
 registerServiceWorker();

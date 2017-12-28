@@ -1,0 +1,18 @@
+.App-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    justify-content: center;
+    background-color: #519872;
+}
+
+.inner-header {
+    width: 50%;
+    min-width: 75%;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    padding: 1em 0 0 2em;
+}
