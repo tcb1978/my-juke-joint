@@ -12,7 +12,7 @@ class App extends Component {
       
     }
     //bind
-    this.app = this.app.bind(this);
+    // this.app = this.app.bind(this);
   }
 
   render() {
