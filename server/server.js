@@ -5,6 +5,7 @@ const bodyParser = require('body-parser')
 const massive = require('massive')
 const cors = require('cors')
 const album_controller = require(__dirname + '/album_controller.js');
+const track_controller = require(__dirname + '/track_controller.js');
 
 //EXPRESS
 const app = express();
@@ -21,7 +22,7 @@ app.get(`${albumsURL}/:id`, album_controller.findOne);
 app.delete(`${albumsURL}/:id`, album_controller.destroy);
 app.put(`${albumsURL}/:id`, album_controller.update);
 
-const trackURL = "/api/tracks/:track_id/tracks";
+const trackURL = `/albums/:album_id/tracks`;
 app.post(trackURL, track_controller.create);
 app.put(`${trackURL}/:id`, track_controller.update);
 app.delete(`${trackURL}/:id`, track_controller.destroy);
