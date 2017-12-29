@@ -9,7 +9,7 @@ module.exports = {
         const { Id, AlbumId, Title, TrackLength, FileUrl } = req.body;
         tracks.push({ Id, AlbumId, Title, TrackLength, FileUrl });
         id++;
-        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
+        res.status(200).send({Id, AlbumId, Title, TrackLength, FileUrl});
     },
 
     update: (req, res) => {
