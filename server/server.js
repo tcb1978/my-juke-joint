@@ -26,11 +26,11 @@ app.get(trackURL, track_controller.read);
 app.put(`${trackURL}/:id`, track_controller.update);
 app.delete(`${trackURL}/:id`, track_controller.delete);
 
-const artistURL = "/api/artists/:artist_id/artists";
-app.post(artistURL, artist_controller.create);
-app.get(artistURL, artist_controller.read);
-app.put(`${artistURL}/:id`, artist_controller.update);
-app.delete(`${artistURL}/:id`, artist_controller.delete);
+// const artistURL = "/api/artists/:artist_id/artists";
+// app.post(artistURL, artist_controller.create);
+// app.get(artistURL, artist_controller.read);
+// app.put(`${artistURL}/:id`, artist_controller.update);
+// app.delete(`${artistURL}/:id`, artist_controller.delete);
 
 
 massive(process.env.CONNECTION_STRING)
