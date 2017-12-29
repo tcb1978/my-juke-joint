@@ -26,7 +26,8 @@ module.exports = {
         const deleteID = req.params.id;
         albumID = albums.findIndex(album => album.id == deleteID);
         albums.splice(albumID, 1);
-        res.status(200).send(albums);
+        res.status(202)
+        res.end()
     },
 
     update: (req, res) => {

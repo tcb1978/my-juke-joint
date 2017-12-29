@@ -28,9 +28,10 @@ module.exports = {
     },
 
     destroy: (req, res) => {
-        const deleteID = req.params.id;
-        trackID = tracks.findIndex(track => track.id == deleteID);
-        tracks.splice(trackID, 1);
-        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
+        const deleteID = req.params.id
+        trackID = tracks.findIndex(track => track.id == deleteID)
+        tracks.splice(trackID, 1)
+        res.status(202)
+        res.end()
     }
 };
