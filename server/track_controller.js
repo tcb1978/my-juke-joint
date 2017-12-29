@@ -6,14 +6,14 @@ let id = 0;
 
 module.exports = {
     create: (req, res) => {
-        const { track } = req.body;
-        tracks.push({ id, track });
+        const { id, albumId, title, length, fileURL } = req.body;
+        tracks.push({ id, albumId, title, length, fileURL });
         id++;
-        res.status(200).send(tracks);
+        res.status(200).send(id, albumId, title, length, fileURL);
     },
 
     read: (req, res) => {
-        res.status(200).send(tracks);
+        res.status(200).send(id, albumId, title, length, fileURL);
     },
 
     update: (req, res) => {
@@ -22,6 +22,10 @@ module.exports = {
 
         tracks[index] = {
             id: tracks[index].id,
+            albumId: req.body.album.track || album[index].albumId,
+            title: req.body.album.title || album[index].title,
+            length: req.body.album.length || album[index].length,
+            fileURL: req.body.album.fileURL || album[index].fileURL,
             track: req.body.album.track || album[index].track,
         };
 
@@ -32,6 +36,6 @@ module.exports = {
         const deleteID = req.params.id;
         trackID = tracks.findIndex(track => track.id == deleteID);
         tracks.splice(trackID, 1);
-        res.status(200).send(tracks);
+        res.status(200).send(id, albumId, title, length, fileURL);
     }
 };
