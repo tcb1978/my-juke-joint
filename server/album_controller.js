@@ -6,8 +6,8 @@ let id = 0;
 
 module.exports = {
     create: (req, res) => {
-        const { track, artist } = req.body;
-        albums.push({ id, track, artist });
+        const { album } = req.body;
+        albums.push({ id, album });
         id++;
         res.status(200).send(albums);
     },
@@ -22,8 +22,7 @@ module.exports = {
 
         albums[index] = {
             id: albums[index].id,
-            track: req.body.track || albums[index].track,
-            artist: req.body.artist || albums[index].artist
+            album: req.body.album || albums[index],
         };
 
         res.status(200).send(albums);

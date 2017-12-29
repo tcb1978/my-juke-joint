@@ -20,11 +20,17 @@ app.get(albumsURL, album_controller.read);
 app.put(`${albumsURL}/:id`, album_controller.update);
 app.delete(`${albumsURL}/:id`, album_controller.delete);
 
-const trackURL = "/api/albums/:album_id/tracks";
-app.post(trackURL, album_controller.create);
-app.get(trackURL, album_controller.read);
-app.put(`${trackURL}/:id`, album_controller.update);
-app.delete(`${trackURL}/:id`, album_controller.delete);
+const trackURL = "/api/tracks/:track_id/tracks";
+app.post(trackURL, track_controller.create);
+app.get(trackURL, track_controller.read);
+app.put(`${trackURL}/:id`, track_controller.update);
+app.delete(`${trackURL}/:id`, track_controller.delete);
+
+const artistURL = "/api/artists/:artist_id/artists";
+app.post(artistURL, artist_controller.create);
+app.get(artistURL, artist_controller.read);
+app.put(`${artistURL}/:id`, artist_controller.update);
+app.delete(`${artistURL}/:id`, artist_controller.delete);
 
 
 massive(process.env.CONNECTION_STRING)

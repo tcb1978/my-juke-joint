@@ -8,8 +8,10 @@ class Header extends Component {
         return (
             <header className="App-header">
                 <section className="inner-header">
-                    <div className="inner-header-right"></div>
-                    <div class="inner-header-left"></div>
+                    <div className="inner-header-right">
+                        <span className="my-juke-joint">MY JUKE JOINT</span>
+                    </div>
+                    <div className="inner-header-left"></div>
                 </section>
             </header>
         )

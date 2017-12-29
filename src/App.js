@@ -6,6 +6,8 @@ import { connect } from "react-redux";
 import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
+import Main from './Main';
+import Footer from './Footer';
 
 class App extends Component {
 
@@ -22,6 +24,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        <Main />
+        <Footer />
         {/*router*/}
       </div>
     );

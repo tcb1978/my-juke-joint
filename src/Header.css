@@ -4,15 +4,32 @@
     width: 100%;
     height: 75px;
     justify-content: center;
-    background-color: #519872;
+    background-color: #3498db;
+}
+
+.my-juke-joint {
+    color: #ffd700;
+    /* font-family: 'Rubik', sans-serif; */
 }
 
 .inner-header {
-    width: 50%;
-    min-width: 75%;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin: 0 auto;
     display: flex;
-    padding: 1em 0 0 2em;
+}
+
+@media (min-width:500px) {
+    .my-juke-joint {
+        font-size: 3em;
+    }
+    .inner-header {
+        padding: .5em 1em;
+    }
+}
+
+@media (max-width:499px) {
+    .my-juke-joint {
+        font-size: 2em;
+    }
+    .inner-header {
+        padding: 1.25em 1em;
+    }
 }

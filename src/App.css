@@ -1,11 +1,28 @@
 /* font-family: 'Roboto', sans-serif;
 font-family: 'Rubik Mono One', sans-serif;
 font-family: 'Rubik', sans-serif; */
+/* colors
+ pink: #ff1493 0%,
+ green: #1abc9c 100%
+ off white: #ecf0f1
+ blue: #3498db 
+ gold: #ffd700*/
 body {
   font-family: 'Roboto', sans-serif;
+  color: #ffd700;
+}
+
+h1, h2, h3, h4 {
+  color: #ecf0f1;
+  font-family: 'Rubik', sans-serif;
+}
+
+ul {
+  list-style: none;
 }
 
 .App {
   text-align: center;
+  height: 100vh;
 }
 
