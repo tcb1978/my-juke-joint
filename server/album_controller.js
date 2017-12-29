@@ -19,7 +19,6 @@ module.exports = {
     findOne: (req, res) => {
         const findID = req.params.id;
         albumID = albums.findIndex(album => album.id == findID);
-        albums.push(albumID);
         res.status(200).send(albums);
     },
 
