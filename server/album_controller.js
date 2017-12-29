@@ -6,13 +6,27 @@ let id = 0;
 
 module.exports = {
     create: (req, res) => {
-        const { id, album, title, artist, release, artworkURL } = req.body;
-        albums.push({ id, album, title, artist, release, artworkURL });
+        const { Id, Title, ArtistName, ReleaseYear, ArtworkUrl } = req.body;
+        albums.push({ Id, Title, ArtistName, ReleaseYear, ArtworkUrl });
         id++;
         res.status(200).send(albums);
     },
 
-    read: (req, res) => {
+    list: (req, res) => {
+        res.status(200).send(albums);
+    },
+
+    findOne: (req, res) => {
+        const findID = req.params.id;
+        albumID = albums.findIndex(album => album.id == findID);
+        albums.push(albumID);
+        res.status(200).send(albums);
+    },
+
+    destroy: (req, res) => {
+        const deleteID = req.params.id;
+        albumID = albums.findIndex(album => album.id == deleteID);
+        albums.splice(albumID, 1);
         res.status(200).send(albums);
     },
 
@@ -21,21 +35,13 @@ module.exports = {
         let index = albums.findIndex(album => album.id == updateID);
 
         albums[index] = {
-            id: albums[index].id,
-            album: req.body.album || albums[index],
-            title: req.body.album || albums[index].title,
-            artist: req.body.album || albums[index].artist,
-            release: req.body.album || albums[index].release,
-            artworkURL: req.body.album || albums[index].artworkURL
+            Id: albums[index].id,
+            Title: req.body.album || albums[index].Title,
+            ArtistName: req.body.album || albums[index].ArtistName,
+            ReleaseYear: req.body.album || albums[index].ReleaseYear,
+            ArtworkUrl: req.body.album || albums[index].ArtworkUrl
         };
 
-        res.status(200).send(albums);
-    },
-
-    delete: (req, res) => {
-        const deleteID = req.params.id;
-        albumID = albums.findIndex(album => album.id == deleteID);
-        albums.splice(albumID, 1);
         res.status(200).send(albums);
     }
 };

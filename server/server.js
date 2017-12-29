@@ -16,21 +16,15 @@ app.use(cors());
 //ENDPOINTS
 const albumsURL = "/api/albums";
 app.post(albumsURL, album_controller.create);
-app.get(albumsURL, album_controller.read);
+app.get(albumsURL, album_controller.list);
+app.get(`${albumsURL}/:id`, album_controller.findOne);
+app.delete(`${albumsURL}/:id`, album_controller.destroy);
 app.put(`${albumsURL}/:id`, album_controller.update);
-app.delete(`${albumsURL}/:id`, album_controller.delete);
 
 const trackURL = "/api/tracks/:track_id/tracks";
 app.post(trackURL, track_controller.create);
-app.get(trackURL, track_controller.read);
 app.put(`${trackURL}/:id`, track_controller.update);
-app.delete(`${trackURL}/:id`, track_controller.delete);
-
-// const artistURL = "/api/artists/:artist_id/artists";
-// app.post(artistURL, artist_controller.create);
-// app.get(artistURL, artist_controller.read);
-// app.put(`${artistURL}/:id`, artist_controller.update);
-// app.delete(`${artistURL}/:id`, artist_controller.delete);
+app.delete(`${trackURL}/:id`, track_controller.destroy);
 
 
 massive(process.env.CONNECTION_STRING)

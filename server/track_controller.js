@@ -6,14 +6,10 @@ let id = 0;
 
 module.exports = {
     create: (req, res) => {
-        const { id, albumId, title, length, fileURL } = req.body;
-        tracks.push({ id, albumId, title, length, fileURL });
+        const { Id, AlbumId, Title, TrackLength, FileUrl } = req.body;
+        tracks.push({ Id, AlbumId, Title, TrackLength, FileUrl });
         id++;
-        res.status(200).send(id, albumId, title, length, fileURL);
-    },
-
-    read: (req, res) => {
-        res.status(200).send(id, albumId, title, length, fileURL);
+        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
     },
 
     update: (req, res) => {
@@ -21,21 +17,20 @@ module.exports = {
         let index = tracks.findIndex(track => track.id == updateID);
 
         tracks[index] = {
-            id: tracks[index].id,
-            albumId: req.body.album.track || album[index].albumId,
-            title: req.body.album.title || album[index].title,
-            length: req.body.album.length || album[index].length,
-            fileURL: req.body.album.fileURL || album[index].fileURL,
-            track: req.body.album.track || album[index].track,
+            Id: tracks[index].Id,
+            AlbumId: req.body.album.Id || album[index].AlbumId,
+            Title: req.body.album.Title || album[index].Title,
+            TrackLength: req.body.album.TrackLength || album[index].TrackLength,
+            FileUrl: req.body.album.FileUrl || album[index].FileUrl
         };
 
-        res.status(200).send(tracks);
+        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
     },
 
     delete: (req, res) => {
         const deleteID = req.params.id;
         trackID = tracks.findIndex(track => track.id == deleteID);
         tracks.splice(trackID, 1);
-        res.status(200).send(id, albumId, title, length, fileURL);
+        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
     }
 };
