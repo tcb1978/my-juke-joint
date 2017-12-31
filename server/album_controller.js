@@ -3,6 +3,9 @@ require('dotenv').config();
 let albums = [];
 let id = 0;
 
+//dbInstance.albums.insert({ //stuff here }).then(created => {  //do whatever with the created thing }).catch(err => {  //handle error})
+
+
 module.exports = {
     create: (req, res) => {
         const dbInstance = req.app.get('db');
