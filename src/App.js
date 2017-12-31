@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import routes from './routes';
+// import axios from 'axios';
+// import routes from './routes';
 import { connect } from "react-redux";
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import Header from './Header';
 import Main from './Main';

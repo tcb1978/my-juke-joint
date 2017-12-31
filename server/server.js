@@ -9,10 +9,14 @@ const track_controller = require(__dirname + '/track_controller.js')
 
 //EXPRESS
 const app = express()
+
+massive(process.env.CONNECTION_STRING)
+	.then(db => {
+		app.set('db', db)
+	}).catch((error) => console.error())
+
 app.use(bodyParser.json())
-app.use(cors())
-
-
+app.use(cors())	
 
 //ENDPOINTS
 const albumsURL = "/api/albums"
@@ -26,15 +30,6 @@ const trackURL = `/api/albums/:album_id/tracks`
 app.post(trackURL, track_controller.create)
 app.put(`${trackURL}/:id`, track_controller.update)
 app.delete(`${trackURL}/:id`, track_controller.destroy)
-
-
-massive(process.env.CONNECTION_STRING)
-	.then(db => {
-		app.set('db', db)
-	}).catch((error) => console.error())
-
-const db = app.get('db')
-
 
 //START SERVER
 const port = 3000
