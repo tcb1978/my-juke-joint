@@ -1,1 +1,0 @@
-UPDATE Albums SET description = $2 WHERE Id = $1;

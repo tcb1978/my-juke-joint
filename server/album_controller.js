@@ -21,41 +21,75 @@ module.exports = {
             console.log(err)
             res.err(err)
         })
-            // albums.push({ Id, Title, ArtistName, ReleaseYear, ArtworkUrl });
-            // id++;
-            // res.status(200).send({ albums });
     },
 
     list: (req, res) => {
-        const dbInstance = req.app.get('db');  
-            res.status(200).send({ albums });
+        const dbInstance = req.app.get('db')
+        const { title, artist_name, release_year, artwork_url } = req.body;
+        dbInstance.albums.find()
+        .then(found => {
+            res.send(found)
+        }).catch(err => {
+            console.log(err)
+            res.err(err)
+        })
     },
 
     findOne: (req, res) => {
-        const findID = req.params.id;
-        albumID = albums.findIndex(album => album.id == findID);
-        res.status(200).send({ albums });
+        const dbInstance = req.app.get('db')
+        const { id } = req.body;
+        dbInstance.albums.findOne({
+            id: req.params.id
+        }).then(found => {
+            res.send(found)
+        }).catch(err => {
+            console.log(err)
+            res.err(err)
+        })
     },
     
     update: (req, res) => {
-        const updateID = req.params.id;
-        let index = albums.findIndex(album => album.id == updateID);
-            albums[index] = {
-                Id: req.body.album || albums.Id,
-                Title: req.body.album || albums.Title,
-                ArtistName: req.body.album || albums.ArtistName,
-                ReleaseYear: req.body.album || albums.ReleaseYear,
-                ArtworkUrl: req.body.album || albums.ArtworkUrl
-            };
+        const dbInstance = req.app.get('db')
+        const { title, artist_name, release_year, artwork_url } = req.body;
+        const newUpdate = {}
 
-            res.status(200).send(albums);
+        if (req.body.title) {
+            newUpdate.title = req.body.title
+        }
+
+        if (req.body.artist_name) {
+            newUpdate.artist_name = req.body.artist_name
+        }
+
+        if (req.body.release_year) {
+            newUpdate.release_year = req.body.release_year    
+        }
+
+        if (req.body.artwork_url) {
+            newUpdate.artwork_url = req.body.artwork_url
+        }
+
+        dbInstance.albums.update({
+            id: req.params.id,
+        }, newUpdate)
+        .then(updated => {
+            res.send(updated)
+        }).catch(err => {
+            console.log(err)
+            res.err(err)
+        })
     },
 
     destroy: (req, res) => {
-        const deleteID = req.params.id;
-        albumID = albums.findIndex(album => album.id == deleteID);
-        albums.splice(albumID, 1);
-        res.status(202)
-        res.end()
+        const dbInstance = req.app.get('db')
+        const { id } = req.body;
+        dbInstance.albums.update({
+            title: req.body.title,
+            artist_name: req.body.artist_name,
+            release_year: req.body.release_year,
+            artwork_url: req.body.artwork_url
+        }).then(deleted => {
+            res.end()
+        })
     }
 };
