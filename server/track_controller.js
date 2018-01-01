@@ -15,16 +15,15 @@ module.exports = {
     update: (req, res) => {
         const updateID = req.params.id;
         let index = tracks.findIndex(track => track.id == updateID);
-
         tracks[index] = {
-            Id: tracks[index].Id,
-            AlbumId: req.body.album.Id || album[index].AlbumId,
-            Title: req.body.album.Title || album[index].Title,
-            TrackLength: req.body.album.TrackLength || album[index].TrackLength,
-            FileUrl: req.body.album.FileUrl || album[index].FileUrl
+            Id: tracks.Id,
+            AlbumId: tracks.AlbumId || tracks.AlbumId,
+            Title: tracks.Title || tracks.Title,
+            TrackLength: tracks.TrackLength || tracks.TrackLength,
+            FileUrl: tracks.FileUrl || tracks.FileUrl
         };
 
-        res.status(200).send(Id, AlbumId, Title, TrackLength, FileUrl);
+        res.status(200).send({tracks});
     },
 
     destroy: (req, res) => {

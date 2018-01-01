@@ -1,0 +1,1 @@
+INSERT INTO Albums ( Id, Title, ArtistName, ReleaseYear, ArtworkUrl ) VALUES ( $1, $2, $3, $4, $5 );

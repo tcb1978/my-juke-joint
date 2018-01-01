@@ -1,0 +1,1 @@
+DELETE FROM Albums WHERE Id = $1;
