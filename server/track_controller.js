@@ -1,36 +1,78 @@
 require('dotenv').config();
-const axios = require('axios');
-
-let tracks = [];
-let id = 0;
+const massive = require('massive')
 
 module.exports = {
     create: (req, res) => {
-        const { Id, AlbumId, Title, TrackLength, FileUrl } = req.body;
-        tracks.push({ Id, AlbumId, Title, TrackLength, FileUrl });
-        id++;
-        res.status(200).send({tracks});
+        const dbInstance = req.app.get('db')
+        const {
+            title,
+            albums_id,
+            track_length,
+            file_url
+        } = req.body;
+
+        dbInstance.tracks.insert({
+            title: title,
+            albums_id: albums_id,
+            track_length: track_length,
+            file_url: file_url
+        }).then(created => {
+            res.send(created)
+        }).catch(err => {
+            console.log(err)
+            res.err(err)
+        })
     },
-    
+
     update: (req, res) => {
         const updateID = req.params.id;
-        let index = tracks.findIndex(track => track.id == updateID);
-        tracks[index] = {
-            Id: tracks.Id,
-            AlbumId: tracks.AlbumId || tracks.AlbumId,
-            Title: tracks.Title || tracks.Title,
-            TrackLength: tracks.TrackLength || tracks.TrackLength,
-            FileUrl: tracks.FileUrl || tracks.FileUrl
-        };
+        const dbInstance = req.app.get('db')
+        const {
+            title,
+            albums_id,
+            track_length,
+            file_url
+        } = req.body;
+        const newUpdate = {}
 
-        res.status(200).send({tracks});
+        if (title) {
+            newUpdate.title = title
+        }
+
+        if (albums_id) {
+            newUpdate.albums_id = albums_id
+        }
+
+        if (track_length) {
+            newUpdate.track_length = track_length
+        }
+
+        if (file_url) {
+            newUpdate.file_url = file_url
+        }
+
+        dbInstance.tracks.update({
+                id: req.params.id,
+            }, newUpdate)
+            .then(updated => {
+                res.send(updated)
+            }).catch(err => {
+                console.log(err)
+                res.err(err)
+            })
     },
 
     destroy: (req, res) => {
-        const deleteID = req.params.id
-        trackID = tracks.findIndex(track => track.id == deleteID)
-        tracks.splice(trackID, 1)
-        res.status(202)
-        res.end()
+        const dbInstance = req.app.get('db')
+        dbInstance.albums.destroy({
+                id: req.params.id,
+            })
+            .then(deleted => {
+                res.status(202).end()
+            })
+            .catch(err => {
+                console.log(err)
+                res.err(err)
+            })
     }
 };

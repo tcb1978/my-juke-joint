@@ -1,0 +1,1 @@
+INSERT INTO tracks ( title, album_id, track_length, file_url ) VALUES ( $1, $2, $3, $4 );

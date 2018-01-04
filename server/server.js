@@ -15,6 +15,7 @@ massive(process.env.CONNECTION_STRING)
 		app.set('db', db)
 	}).catch((error) => console.error())
 
+console.log(process.env.CONNECTION_STRING);
 app.use(bodyParser.json())
 app.use(cors())	
 
@@ -26,11 +27,11 @@ app.get(`${albumsURL}/:id`, album_controller.findOne)
 app.delete(`${albumsURL}/:id`, album_controller.destroy)
 app.put(`${albumsURL}/:id`, album_controller.update)
 
-const trackURL = `/api/albums/:album_id/tracks`
+const trackURL = `/api/tracks`
 app.post(trackURL, track_controller.create)
 app.put(`${trackURL}/:id`, track_controller.update)
 app.delete(`${trackURL}/:id`, track_controller.destroy)
 
 //START SERVER
 const port = 3000
-app.listen(port, () => console.log(`listening on port ${port}`))
+app.listen(port, () => console.log(`Rocking and Rolling on port ${port}`))
