@@ -24,6 +24,34 @@ module.exports = {
         })
     },
 
+    list: (req, res) => {
+        const dbInstance = req.app.get('db')
+        dbInstance.tracks.find({
+            albums_id : req.params.albums_id
+        })
+            .then(found => {
+                res.send(found)
+            }).catch(err => {
+                console.log(err)
+                res.err(err)
+            })
+    },
+
+    findOne: (req, res) => {
+        const dbInstance = req.app.get('db')
+        const {
+            id
+        } = req.body
+        dbInstance.tracks.findOne({
+            id: req.params.id
+        }).then(found => {
+            res.send(found)
+        }).catch(err => {
+            console.log(err)
+            res.err(err)
+        })
+    },
+
     update: (req, res) => {
         const updateID = req.params.id;
         const dbInstance = req.app.get('db')

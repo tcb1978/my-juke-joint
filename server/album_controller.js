@@ -34,7 +34,7 @@ module.exports = {
             release_year,
             artwork_url
         } = req.body
-        dbInstance.albums.find()
+        dbInstance.albums.find()            
             .then(found => {
                 res.send(found)
             }).catch(err => {
