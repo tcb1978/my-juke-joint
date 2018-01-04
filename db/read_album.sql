@@ -1,1 +1,0 @@
-SELECT * FROM Albums WHERE Id = $1;

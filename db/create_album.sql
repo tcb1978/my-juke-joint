@@ -1,1 +1,0 @@
-INSERT INTO albums ( title, artist_name, release_year, artwork_url ) VALUES ( $1, $2, $3, $4 );
