@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
-import './font-awesome/css/font-awesome.css'
-
+import '../App.css';
 import FontAwesome from 'react-fontawesome';
-import faStyles from './font-awesome/css/font-awesome.css';
+import faStyles from '../font-awesome/css/font-awesome.css';
 
 
 class Facebook extends Component{

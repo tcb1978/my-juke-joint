@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css'
+import '../App.css'
 import './Footer.css'
 import Facebook from './FontAwesomeFaceBook'
 // import Twitter from './FontAwesomeTwitter'

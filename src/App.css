@@ -13,7 +13,7 @@ body {
 }
 
 h1, h2, h3, h4 {
-  color: #ecf0f1;
+  color: #000;
   font-family: 'Rubik', sans-serif;
 }
 
@@ -25,4 +25,20 @@ ul {
   text-align: center;
   height: 100vh;
 }
+
+ .body-main {
+ }
+
+ .controller {
+   margin-top: 5em;
+ }
+
+ .controller-box {
+
+ }
+
+ .btn-control {
+   flex: 1;
+   height: 5em;
+ }
 
