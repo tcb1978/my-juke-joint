@@ -8,7 +8,7 @@ class Randomize extends Component {
             <div className="controller randomize-controller">
                 <div className="controller-box">
                     <BreadCrumb />
-                    <h1>Randomize</h1>
+                    <h1 className="top-z">Randomize</h1>
                 </div>
             </div>
         )

@@ -7,7 +7,7 @@ class Artist extends Component {
         return (
             <div className="artist-controller">
                 <div className="controller-box">
-                    <h1>Artist</h1>
+                    <h1 className="top-z">Artist</h1>
                 </div>
             </div>
         )

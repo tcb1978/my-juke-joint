@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import './App.css';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Slideshow from './Background-Slideshow';
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
+        {/*<Slideshow />*/}
         {routes}
         <Footer />
       </div>

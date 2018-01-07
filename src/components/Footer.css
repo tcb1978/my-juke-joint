@@ -1,10 +1,14 @@
 .App-footer {
-    position: absolute;
     bottom: 0;
     position: fixed;
     left: 0px;
     width: 100%;
     height: 75px;
     justify-content: center;
-    background-color: #3498db;
+    z-index: 3;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00bbd4), color-stop(1, #3f51b5));
+    background-image: -webkit-linear-gradient(top, #00bbd4 0%, #3f51b5 100%);
+    background-image: linear-gradient(to bottom, #00bbd4 0%, #3f51b5 100%);
+    background-image: -webkit-linear-gradient(93deg, #3f51b5 0%, #00bbd4 100%);
+    color: #fff;
 }

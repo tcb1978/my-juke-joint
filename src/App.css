@@ -12,33 +12,37 @@ body {
   color: #ffd700;
 }
 
-h1, h2, h3, h4 {
-  color: #000;
-  font-family: 'Rubik', sans-serif;
+h1, h2, h3, h4,
+.my-juke-joint {
+    color: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #ffff;
 }
 
 ul {
   list-style: none;
 }
 
-.App {
-  text-align: center;
-  height: 100vh;
+.top-z {
+    position: relative;
+    z-index: 3;
 }
 
- .body-main {
- }
+.App {
+  text-align: center;
+}
 
- .controller {
-   margin-top: 5em;
- }
+.nav-controller {
+    z-index: 3;
+    position: relative;
+    display: flex;
+}
 
- .controller-box {
+.allow-flex-grow {
+  flex-grow: 1;
+}
 
- }
-
- .btn-control {
-   flex: 1;
-   height: 5em;
- }
-
+.controller {
+  margin: 4.75em 0 0 0;
+}

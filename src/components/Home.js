@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css';
 import './Home.css';
-import ControllerBox from './NavControllerBox';
+import PrimaryNavControl from './PrimaryNavControl';
 
 
 class Home extends Component {
     render() {
         return (
             <div className="controller home-controller">
-                <ControllerBox />
+                <PrimaryNavControl />
             </div>
         )
     }
