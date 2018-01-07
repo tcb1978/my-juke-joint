@@ -21,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/*<Slideshow />*/}
+        <Slideshow />
         {routes}
         <Footer />
       </div>

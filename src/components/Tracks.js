@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-// import './Jukebox.css';
+import '../App.css';
 
 class Tracks extends Component {
     render() {
         return (
             <div className="tracks-controller">
                 <div className="controller-box">
-                    <h1>Tracks</h1>
+                    <h1 className="top-z mix-blend">Tracks</h1>
                 </div>
             </div>
         )

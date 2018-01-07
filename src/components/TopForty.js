@@ -8,7 +8,7 @@ class TopForty extends Component {
         <div className="controller top-forty-controller">
             <div className="controller-box">
                 <BreadCrumb />
-                <h1 className="top-z">TopForty</h1>
+                <div className="top-z mix-blend">TopForty</div>
             </div>
         </div>
         )

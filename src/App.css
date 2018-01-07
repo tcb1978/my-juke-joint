@@ -9,15 +9,20 @@ font-family: 'Rubik', sans-serif; */
  gold: #ffd700*/
 body {
   font-family: 'Roboto', sans-serif;
-  color: #ffd700;
+  color: #fff;
 }
 
 h1, h2, h3, h4,
 .my-juke-joint {
-    color: #fff;
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: #ffff;
+    /* -webkit-text-stroke-color: #fff; */
+}
+
+.mix-blend {
+  mix-blend-mode: difference;
+  /* color: #fff; */
+  color: #3f51b5;
 }
 
 ul {
@@ -36,7 +41,11 @@ ul {
 .nav-controller {
     z-index: 3;
     position: relative;
-    display: flex;
+}
+
+.controller-box,
+.nav-controller {
+  display: flex;
 }
 
 .allow-flex-grow {
@@ -44,5 +53,5 @@ ul {
 }
 
 .controller {
-  margin: 4.75em 0 0 0;
+  margin: 4.70em 0 0 0;
 }
