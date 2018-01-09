@@ -55,10 +55,16 @@ module.exports = {
     list: (req, res) => {
         const dbInstance = req.app.get('db')
         dbInstance.query(
-        `SELECT * FROM tracks where albums_id = $1`
+            //JOIN
+        `SELECT * FROM tracks
+        JOIN albums
+        ON tracks.albums_id = albums.id
+         where albums_id = $1
+        `,
+            [req.params.albums_id]
         )
         .then(tracks => {
-            albums_id: req.params.albums_id
+            res.send(tracks);
         })
         .catch(err => {
             console.log(err)
