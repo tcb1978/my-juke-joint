@@ -6,7 +6,7 @@ class Header extends Component {
 
     render() {
         return (
-            <header className="App-header">
+            <header className="App-header gradient top-z">
                 <section className="inner-header">
                     <div className="inner-header-right">
                         <span className="my-juke-joint">MY JUKE JOINT</span>

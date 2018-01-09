@@ -6,7 +6,9 @@ class Albums extends Component {
         return (
             <div className="album-controller">
                 <div className="controller-box">
-                    <h1 className="top-z mix-blend jukebox-selected">Albums</h1>
+                    <div className="masthead gradient top-z">
+                        <h1 className="top-z jukebox-selected">Albums</h1>
+                    </div>
                 </div>
             </div>
         )

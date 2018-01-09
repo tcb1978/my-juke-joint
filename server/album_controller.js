@@ -37,7 +37,8 @@ module.exports = {
         dbInstance.albums.find()            
             .then(found => {
                 res.send(found)
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.log(err)
                 res.err(err)
             })
@@ -50,9 +51,11 @@ module.exports = {
         } = req.body
         dbInstance.albums.findOne({
             id: req.params.id
-        }).then(found => {
+        })
+        .then(found => {
             res.send(found)
-        }).catch(err => {
+        })
+        .catch(err => {
             console.log(err)
             res.err(err)
         })
@@ -89,7 +92,8 @@ module.exports = {
             }, newUpdate)
             .then(updated => {
                 res.send(updated)
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.log(err)
                 res.err(err)
             })

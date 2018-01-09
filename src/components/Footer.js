@@ -8,7 +8,7 @@ class Footer extends Component {
 
     render() {
         return (
-            <footer className="App-footer">
+            <footer className="App-footer gradient top-z">
                 <section className="inner-footer">
                     <div className="inner-footer-right"></div>
                     <div className="inner-footer-left">
