@@ -16,9 +16,11 @@ module.exports = {
             albums_id: albums_id,
             track_length: track_length,
             file_url: file_url
-        }).then(created => {
+        })
+        .then(created => {
             res.send(created)
-        }).catch(err => {
+        })
+        .catch(err => {
             console.log(err)
             res.err(err)
         })
@@ -29,12 +31,13 @@ module.exports = {
         dbInstance.tracks.find({
             albums_id : req.params.albums_id
         })
-            .then(found => {
-                res.send(found)
-            }).catch(err => {
-                console.log(err)
-                res.err(err)
-            })
+        .then(found => {
+            res.send(found)
+        })
+        .catch(err => {
+            console.log(err)
+            res.err(err)
+        })
     },
 
     findOne: (req, res) => {
@@ -44,9 +47,11 @@ module.exports = {
         } = req.body
         dbInstance.tracks.findOne({
             id: req.params.id
-        }).then(found => {
+        })
+        .then(found => {
             res.send(found)
-        }).catch(err => {
+        })
+        .catch(err => {
             console.log(err)
             res.err(err)
         })
@@ -84,7 +89,8 @@ module.exports = {
             }, newUpdate)
             .then(updated => {
                 res.send(updated)
-            }).catch(err => {
+            })
+            .catch(err => {
                 console.log(err)
                 res.err(err)
             })

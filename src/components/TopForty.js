@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import BreadCrumb from './BreadCrumb';
+import '../App.css';
 // import './Jukebox.css';
 
 class TopForty extends Component {
     render(){
         return(
-        <div className="controller top-forty-controller">
-            <div className="controller-box">
-                <BreadCrumb />
-                <div className="top-z mix-blend">TopForty</div>
-            </div>
+        <div className="top-forty-controller">
+                <div className="controller-box">
+                    <div><BreadCrumb /></div>
+                    <div className="allow-flex-grow"><h1 className="top-z mix-blend">Top 40</h1></div>
+                </div>
         </div>
         )
     }
