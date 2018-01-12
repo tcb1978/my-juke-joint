@@ -1,6 +1,25 @@
-const initialState = {}
-
-function reducer( state = initialState, action ) {
-    return state;
+const initialState = {
+    user: null
 }
-export default reducer
+
+//action type
+const LOGIN = 'LOGIN'
+
+
+
+export default function(state = initialState, action) {
+    switch (action.type) {
+        case LOGIN:
+            return { ...state, user: action.payload }
+        default:
+            return state
+
+    }
+}
+
+export const login = (user) => {
+    return {
+        type: LOGIN,
+        payload: user
+    }
+}
