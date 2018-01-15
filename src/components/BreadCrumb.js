@@ -5,6 +5,6 @@ import './button.css';
 
 export default function BreadCrumb(props) {
     return (
-        <Link className="bttn-xs bttn-simple top-z back-crumb" to={`/`}><span className="breadcrumb">back</span></Link>
+        <Link className="bttn-xs bttn-simple top-z back-crumb link" to={`/`}><span className="breadcrumb">back</span></Link>
     )
 }

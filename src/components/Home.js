@@ -7,39 +7,18 @@ import '../App.css'
 import './Home.css'
 import Header from './Header'
 import PrimaryNavControl from './PrimaryNavControl'
+import Footer from './Footer'
+import Auth0 from './Auth0'
 
 class Home extends Component {
-    constructor() {
-        super()
-        this.lock = null
-        this.login = this.login.bind(this)
-    }
-
-    componentDidMount() {
-        this.lock = new Auth0Lock(process.env.REACT_APP_AUTH0_CLIENT_ID, process.env.REACT_APP_AUTH0_DOMAIN)
-        console.log('this.lock', this.lock)
-        this.lock.on('authenticated', authResult => {
-            this.lock.getUserInfo(authResult.accessToken, (error, user) => {
-                axios.post('/login', { userId: user.sub }).then(response => {
-                    this.props.login(response.data.user)
-                    this.props.history.push('/private')
-                })
-            })
-        })
-    }
-
-    login() {
-        this.lock.show()
-    }
 
     render() {
         return (
             <div className="controller home-controller gradient">
                 <Header />
                 {/*<PrimaryNavControl />*/}
-                <div className="auth0-login-container gradient top-z border-radius box-shadow">
-                    <div className="my-juke-joint">Welcome! Please, <button onClick={this.login} className="login-button border-radius">Log in</button> and enjoy the tunes.</div>
-                </div>
+                <Auth0 />
+                <Footer />
             </div>
         )
     }

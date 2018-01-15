@@ -3,6 +3,9 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { login } from '../ducks/reducer.js'
+import Header from './Header'
+import Footer from './Footer'
+import './AccountInfo.css'
 
 class AccountInfo extends Component {
     componentDidMount() {
@@ -17,15 +20,21 @@ class AccountInfo extends Component {
         const { user } = this.props;
         return (
             <div className="controller account-info-controller">
-                <h1>AccountInfo</h1>
-                {user && <div className="acct-info logged-in-as">You are logged in as:
+                <Header />
+                <div className="logged-in-as-container top-z gradient border-radius padded opacity">
+                    <h1>Account Info</h1>
+                    {user && <div className="acct-info logged-in-as">
+                    <img src={user.pictureUrl} alt="user" className="avatar" />
+                    <div>You are logged in as:</div>
                     <div className="acct-info user-name">{user.name}</div>
-                    <div className="acct-info ">{user.email}</div>
-                    <div className="acct-info ">{user.auth0_id}</div>
-                    <img src={user.pictureUrl} alt="user" />
-                </div>}
-                {!user && <p>You must login! <Link to="/">Log in</Link></p>}
+                        <div className="acct-info ">{user.email}</div>
+                        <Link to="/jukebox" className="login-button border-radius padded link">Jukebox</Link>
+                    </div>}
+                    {!user && <Link to="/" className="login-button border-radius padded link add-line-height">Log in</Link>}
+                </div>
+                <Footer />
             </div>
+
         );
     }
 }
