@@ -18,10 +18,10 @@ class AccountInfo extends Component {
         return (
             <div className="controller account-info-controller">
                 <h1>AccountInfo</h1>
-                {user && <div>You are logged in as:
-                    <div><strong>{user.name}</strong></div>
-                    <div><strong>{user.email}</strong></div>
-                    <div><strong>{user.auth0_id}</strong></div>
+                {user && <div className="acct-info logged-in-as">You are logged in as:
+                    <div className="acct-info user-name">{user.name}</div>
+                    <div className="acct-info ">{user.email}</div>
+                    <div className="acct-info ">{user.auth0_id}</div>
                     <img src={user.pictureUrl} alt="user" />
                 </div>}
                 {!user && <p>You must login! <Link to="/">Log in</Link></p>}

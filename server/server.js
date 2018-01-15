@@ -3,9 +3,10 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const massive = require('massive')
-const cors = require('cors')
+const session = require('express-session')
 const album_controller = require(__dirname + '/album_controller.js')
 const track_controller = require(__dirname + '/track_controller.js')
+const axios = require('axios')
 
 //EXPRESS
 const app = express()
@@ -15,9 +16,14 @@ massive(process.env.CONNECTION_STRING)
 		app.set('db', db)
 	}).catch((error) => console.error())
 
-console.log(process.env.CONNECTION_STRING);
+
 app.use(bodyParser.json())
-app.use(cors())	
+
+app.use(session({
+	secret: process.env.SESSION_SECRET,
+	resave: false,
+	saveUninitialized: false,
+}));
 
 //ENDPOINTS
 const albumsURL = "/api/albums"
@@ -72,5 +78,5 @@ app.get('/user-data', (req, res) => {
 });
 
 //START SERVER
-const port = 3000
+const port = 3005
 app.listen(port, () => console.log(`Rocking and Rolling on port ${port}`))

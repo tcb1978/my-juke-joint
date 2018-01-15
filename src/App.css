@@ -10,6 +10,12 @@ h1, h2, h3, h4,
     -webkit-text-stroke-color: #fff;
 }
 
+/* body #a0-lock */
+
+body #a0-lock .auth0-lock-header-welcome {
+  display: none;
+}
+
 .mix-blend {
   mix-blend-mode: difference;
   color: #fff;
@@ -25,10 +31,7 @@ ul {
 }
 
 .gradient {
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #00bbd4), color-stop(1, #3f51b5));
-  background-image: -webkit-linear-gradient(top, #00bbd4 0%, #3f51b5 100%);
   background-image: linear-gradient(to bottom, #00bbd4 0%, #3f51b5 100%);
-  background-image: -webkit-linear-gradient(93deg, #3f51b5 0%, #00bbd4 100%);
 }
 
 .App {
@@ -65,6 +68,14 @@ ul {
 .masthead {
   margin: 0 auto;
   width: 80%;
-  border-radius: 15px;
   opacity: 0.7;
+}
+
+.border-radius {
+  border-radius: 5px;
+}
+
+.box-shadow {
+      box-shadow: 0 5px 11px 0 rgba(255, 255, 255, 0.9),
+      0 0px 0px 0 rgba(255, 255, 255, 0.10);
 }

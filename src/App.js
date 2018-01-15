@@ -20,10 +20,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        {/*<Header />*/}
         {/*<Slideshow />*/}
         {routes}
-        <Footer />
+        {/*<Footer />*/}
       </div>
     );
   }
