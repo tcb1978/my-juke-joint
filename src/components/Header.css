@@ -9,6 +9,11 @@
 
 .inner-header {
     display: flex;
+    justify-content: space-between;
+}
+
+.inner-header-left {
+    margin-top: 1.5em;
 }
 
 @media (min-width:500px) {

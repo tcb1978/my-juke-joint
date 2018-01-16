@@ -28,7 +28,7 @@ class AccountInfo extends Component {
                     <div>You are logged in as:</div>
                     <div className="acct-info user-name">{user.name}</div>
                         <div className="acct-info ">{user.email}</div>
-                        <Link to="/jukebox" className="login-button border-radius padded link">Jukebox</Link>
+                        <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
                     </div>}
                     {!user && <Link to="/" className="login-button border-radius padded link add-line-height">Log in</Link>}
                 </div>

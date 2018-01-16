@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import JukeBoxNav from './JukeBoxNav';
 import BreadCrumb from './BreadCrumb';
 import './Jukebox.css';
-import routes from '../routes'
 import Header from './Header'
 import Footer from './Footer'
 
