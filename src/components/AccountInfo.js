@@ -18,13 +18,14 @@ class AccountInfo extends Component {
 
     render() {
         const { user } = this.props;
+        console.log(user);
         return (
             <div className="controller account-info-controller">
                 <Header />
                 <div className="logged-in-as-container top-z gradient border-radius padded opacity">
                     <h1>Account Info</h1>
                     {user && <div className="acct-info logged-in-as">
-                    <img src={user.pictureUrl} alt="user" className="avatar" />
+                    <img src={user.pictureurl} alt="user" className="avatar" />
                     <div>You are logged in as:</div>
                     <div className="acct-info user-name">{user.name}</div>
                         <div className="acct-info ">{user.email}</div>

@@ -51,20 +51,21 @@ app.post('/login', (req, res) => {
 		}
 	}).then(response => {
 		const userData = response.data;
-		req.session.user = {
-			name: userData.name,
-			email: userData.email,
-			auth0_id: userData.user_id,
-			pictureUrl: userData.picture
-		};
-		res.json({ user: req.session.user });
 		app.get('db').find_user(userData.user_id).then(users => {
 			if (!users.length) {
-				app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name]).then(() => {
-
-				}).catch(error => {
+				app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name])
+				.then((user) => {
+					req.session.user = user[0]
+					console.log(user[0]);
+					res.json({ user: req.session.user });
+				})
+				.catch(error => {
 					console.log('error', error);
-				});
+				})
+			}else {
+				req.session.user = users[0]
+				console.log(users[0]);
+				res.json({ user: req.session.user });
 			}
 		})
 	}).catch(error => {

@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
-import BreadCrumb from './BreadCrumb';
-import '../App.css';
-// import './Jukebox.css';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import '../App.css'
+import Header from './Header'
+import Footer from './Footer'
 
 class TopForty extends Component {
     render(){
         return(
-        <div className="top-forty-controller">
-                <div className="controller-box">
-                    <div><BreadCrumb /></div>
-                    <div className="allow-flex-grow"><h1 className="top-z mix-blend">Top 40</h1></div>
-                </div>
+        <div className="controller top-forty-controller">
+            <Header />
+            <div className="controller-box">
+                <div className="allow-flex-grow"><h1 className="top-z mix-blend">Top 40</h1></div>
+            </div>
+            <Footer />
         </div>
         )
     }
 }
-export default TopForty
+
+function mapStateToProps(state) {
+    return {
+        user: state.user
+    }
+}
+
+export default connect(mapStateToProps)(TopForty)

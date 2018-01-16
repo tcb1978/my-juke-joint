@@ -18,10 +18,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {/*<Header />*/}
-        <Slideshow />
+        {/*<Slideshow />*/}
         {routes}
-        {/*<Footer />*/}
       </div>
     );
   }

@@ -35,7 +35,7 @@ class Auth0 extends Component {
 
     render() {
         return (
-            <div className="auth0-login-container gradient top-z border-radius box-shadow opacity">
+            <div className="auth0-login-container gradient top-z border-radius box-shadow opacity padded">
                 <div className="my-juke-joint">Welcome! Please, <button onClick={this.login} className="login-button border-radius">Log in</button> and enjoy the tunes.</div>
             </div>
         )

@@ -9,14 +9,18 @@ import Footer from './Footer'
 import Auth0 from './Auth0'
 
 class Home extends Component {
+    constructor(props) {
+        super()
+        this.state = ({
+            user : null
+        })
+    }
 
     render() {
         return (
-            <div className="controller home-controller gradient">
-                
+            <div className="controller home-controller">
                 <Header />
-                {/*<PrimaryNavControl />*/}
-                <Auth0 />
+                {this.props.user ? <PrimaryNavControl /> : <Auth0 />}
                 <Footer />
             </div>
         )
