@@ -16,8 +16,8 @@ export default (
             <Route path="/private" component={AccountInfo} />
             <Route path="/jukebox" render={() => (
                 <Jukebox>
-                    <Route path="/jukebox/artist" component={Artist} />
                     <Route path="/jukebox/albums" component={Albums} />
+                    <Route path="/jukebox/artist" component={Artist} />
                     <Route path="/jukebox/tracks" component={Tracks} /> 
                 </Jukebox>
             )} />

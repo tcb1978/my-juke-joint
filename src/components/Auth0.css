@@ -4,14 +4,13 @@
     justify-content: center;
     width: 80%;
     margin: 15em auto;
-    height: 10em;
+    cursor: pointer;
 }
 
 .login-button {
     color: #fff;
     border: 1px solid #fff;
     background: transparent;
-    font-size: 40px;
     cursor: pointer;
 }
 

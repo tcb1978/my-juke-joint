@@ -1,0 +1,16 @@
+.album-info-container {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: inherit;
+    align-items: left;
+    align-content: flex-start;
+}
+
+.album-art {
+    max-width: 5em;
+    max-height: 5em;
+    bottom: 1.75em;
+    display: inline-block;
+    position: relative;
+}
