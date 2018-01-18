@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import '../App.css'
 import './Tracks.css'
+import '../globalUtilities.css'
 
 
 class Tracks extends Component {
@@ -34,17 +35,19 @@ class Tracks extends Component {
                 <div className="controller-box">
                     <div className="masthead gradient top-z opacity border-radius">
                         <h1 className="top-z jukebox-selected">Tracks</h1>
-                        <div className="info-container track-display inner-masthead-max">
-                            {this.state.tracks.map((track, index) => {
-                                console.log(track, index);
-                                console.log(track, index);
-                                return <div key={index} className="track-info-container inner-masthead-max border-radius">
-                                    <div className="track-element track-title">'{track.title}'</div>
-                                    <div className="track-element info-element track-artist">{track.artist_name}</div>
-                                    <div className="track-element info-element track-release">{track.release_year}</div>
-                                    <img className="track-element info-element track-art" src={track.file_url} />
-                                </div>
-                            })}
+                        <div className="track-display">
+                            <div className="max-verticle-height">
+                                {this.state.tracks.map((track, index) => {
+                                    console.log(track, index);
+                                    console.log(track, index);
+                                    return <div key={index} className="tracks-view-container info-container inner-masthead-max border-radius">
+                                        <div className="track-element track-title flex2 line-height">'{track.title}'</div>
+                                        <div className="track-element track-artist flex1 line-height">{track.artist_name}</div>
+                                        <div className="track-element track-release flex1 line-height">{track.release_year}</div>
+                                        <img className="track-element album-art flex1 line-height" src={track.file_url} />
+                                    </div>
+                                })}
+                            </div>
                         </div>
                     </div>
                 </div>

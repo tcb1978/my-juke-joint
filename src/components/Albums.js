@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './Albums.css'
+import '../globalUtilities.css'
 
 
 class Albums extends Component {
@@ -11,12 +12,25 @@ class Albums extends Component {
             title: '',
             artist: '',
             release: '',
-            artwork: ''
+            artwork: '',
+            id: '',
+            tracks: []
         }
+        this.removeAlbum = this.removeAlbum.bind(this)
     }
 
     componentDidMount() {
+        this.getTracks()
         this.getAlbums()
+    }
+
+    getTracks() {
+        axios.get(`/api/tracks`).then(response => {
+            const tracks = response.data
+            this.setState({
+                tracks: tracks,
+            })
+        })
     }
 
     getAlbums() {
@@ -28,20 +42,38 @@ class Albums extends Component {
         })
     }
 
+    removeAlbum(val) {
+        console.log(val);
+        axios.delete(`/api/tracks/albums/${val}`).then(response => {
+            axios.delete(`/api/albums/${val}`).then(response => {
+                this.setState({
+                    albums: response.data.albums,
+                })
+            })
+        })
+    }
+
     render() {
+        console.log(this.state)
         return (
             <div className="album-controller">
                 <div className="controller-box">
                     <div className="masthead gradient top-z opacity border-radius">
                         <h1 className="top-z jukebox-selected">Albums</h1>
-                        {this.state.albums.map((album, index) => { 
-                            return <div key={index} className="info-container inner-masthead-max border-radius">
-                                <div className="album-element info-element album-title">'{album.title}'</div>
-                                <div className="album-element info-element album-artist">{album.artist_name}</div>
-                                <div className="album-element info-element album-release">{album.release_year}</div>
-                                <img className="album-element info-element album-art" src={album.artwork_url} />
-                            </div>
-                        })}
+                        <div className="max-verticle-height horizontal-row">
+                            {this.state.albums.map((album, index) => {
+                                return <div key={index} className=" album-view-info-cell info-container border-radius">
+                                    <div className="album-element info-element album-title">'{album.title}'</div>
+                                    <div className="album-element info-element album-artist">{album.artist_name}</div>
+                                    <div className="album-element info-element album-release">{album.release_year}</div>
+                                    <div className="album-controls-box">
+                                        <i className="fa fa-plus-circle album-controls" aria-hidden="true"></i>
+                                        <img className="album-element info-element album-art" src={album.artwork_url} />
+                                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

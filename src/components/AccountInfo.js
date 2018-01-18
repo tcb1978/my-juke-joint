@@ -22,17 +22,19 @@ class AccountInfo extends Component {
         return (
             <div className="controller account-info-controller">
                 <Header />
-                <div className="logged-in-as-container top-z gradient border-radius padded opacity">
-                    <h1>Account Info</h1>
-                    {user && <div className="acct-info logged-in-as">
-                    <img src={user.pictureurl} alt="user" className="avatar" />
-                    <div>You are logged in as:</div>
-                    <div className="acct-info user-name">{user.name}</div>
-                        <div className="acct-info ">{user.email}</div>
-                        <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
-                    </div>}
-                    {!user && <Link to="/" className="login-button border-radius padded link add-line-height">Log in</Link>}
-                </div>
+                    <div className="logged-in-as-container top-z gradient border-radius padded opacity">
+                        {user && <div className="acct-info logged-in-as">
+                        <h1>Account Info</h1>
+                        <img src={user.pictureurl} alt="user" className="avatar" />
+                        <div>You are logged in as:</div>
+                        <div className="acct-info user-name">{user.name}</div>
+                            <div className="acct-info ">{user.email}</div>
+                            <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
+                        </div>}
+                        {!user && <div className="not-logged-in">
+                            <Link to="/" className="login-button border-radius padded link add-line-height">Return to Login</Link>
+                        </div>}
+                    </div>
                 <Footer />
             </div>
 

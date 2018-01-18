@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 
 class Header extends Component {
     render() {
-        console.log(this.props.user)
         return (
             <header className="App-header gradient top-z">
                 <section className="inner-header">

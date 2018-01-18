@@ -1,0 +1,39 @@
+.horizontal-row {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.album-view-info-cell.info-container {
+    margin: 2em 1em;
+}
+
+.album-element {
+    width:12em;
+}
+
+.album-controls-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.album-controls {
+    font-size: 3em;
+    cursor: pointer;
+}
+
+@media (min-width: 414px) {
+    .info-element {
+        font-size: 32px;
+    }
+}
+
+
+@media (max-width: 414px) {
+    .horizontal-row {
+        display: flow-root;
+    }
+    .album-element {
+        width: 100%;
+    }
+}

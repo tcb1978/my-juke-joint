@@ -6,6 +6,7 @@ import { login } from '../ducks/reducer.js'
 import { connect } from 'react-redux'
 import '../App.css'
 import './Auth0.css'
+import '../globalUtilities.css'
 
 class Auth0 extends Component {
     constructor() {

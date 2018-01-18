@@ -7,3 +7,13 @@
     justify-content: center;
     color: #fff;
 }
+
+.audio-box {
+    margin-top: 2.5%;
+}
+
+@media (max-width: 414px) {
+    .audio-box {
+        margin-top: 5.5%;
+    }
+}

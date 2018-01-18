@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import './Artist.css'
+import '../globalUtilities.css'
 
 
 class Artist extends Component {
@@ -32,11 +33,15 @@ class Artist extends Component {
                 <div className="controller-box">
                     <div className="masthead gradient top-z opacity border-radius">
                         <h1 className="top-z jukebox-selected">Artist</h1>
-                        {this.state.albums.map((album, index) => {
-                            return <div key={index} className="info-container inner-masthead-max border-radius">
-                                <div className="artist-element info-element"><h3>{album.artist_name}</h3></div>
-                            </div>
-                        })}
+                        <div className="max-verticle-height">
+                            {this.state.albums.map((album, index) => {
+                                return <div key={index} className="info-container inner-masthead-max border-radius">
+                                    <div className="artist-element">
+                                        <span className="my-juke-joint">{album.artist_name}</span>
+                                    </div>
+                                </div>
+                            })}
+                        </div>
                     </div>
                 </div>
             </div>

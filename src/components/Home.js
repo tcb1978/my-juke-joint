@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { login } from '../ducks/reducer.js'
 import { connect } from 'react-redux'
+import axios from 'axios'
 import '../App.css'
 import './Home.css'
 import Header from './Header'
@@ -13,6 +14,12 @@ class Home extends Component {
         super()
         this.state = ({
             user : null
+        })
+    }
+
+    componentDidMount() {
+        axios.get('/user-data').then(response => {
+            this.props.login(response.data.user)
         })
     }
 

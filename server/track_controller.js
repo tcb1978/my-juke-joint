@@ -2,6 +2,21 @@ require('dotenv').config();
 const massive = require('massive')
 
 module.exports = {
+    destroyTracks: (req, res) => {
+        const dbInstance = req.app.get('db')
+        const {albums_id} = req.params;
+        console.log(albums_id);
+        dbInstance.tracks.destroy({
+            albums_id: albums_id,
+        })
+            .then(created => {
+                res.send('created')
+            })
+            .catch(err => {
+                console.log(err)
+                res.err(err)
+            })
+    },
     create: (req, res) => {
         const dbInstance = req.app.get('db')
         const {

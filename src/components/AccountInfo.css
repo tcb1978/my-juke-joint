@@ -6,7 +6,7 @@
 
 .logged-in-as-container {
     width: 40%;
-    margin: 0.5em auto; 
+    margin: 1% auto; 
 }
 
 .avatar {
@@ -22,5 +22,10 @@
 @media (max-width: 414px) {
     .logged-in-as-container {
         width: 85%;
+        margin: 9% auto;
+    }
+
+    .avatar {
+        width: 7em;
     }
 }

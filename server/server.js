@@ -19,12 +19,6 @@ massive(process.env.CONNECTION_STRING)
 
 app.use(bodyParser.json())
 
-app.use(session({
-	secret: process.env.SESSION_SECRET,
-	resave: false,
-	saveUninitialized: false,
-}));
-
 //ENDPOINTS
 const albumsURL = "/api/albums"
 app.post(albumsURL, album_controller.create)
@@ -37,12 +31,20 @@ const trackURL = `/api/tracks`
 app.post(trackURL, track_controller.create)
 app.put(`${trackURL}/:id`, track_controller.update)
 app.delete(`${trackURL}/:id`, track_controller.destroy)
+app.delete(`/api/tracks/albums/:albums_id`, track_controller.destroyTracks)
 app.get(`/api/tracks`, track_controller.listAll)
 app.get(`/api/albums/:albums_id/tracks`, track_controller.list)
 app.get(`/api/albums/:albums_id/tracks/:id`, track_controller.findOne)
 
 
 //LOGIN
+app.use(session({
+	secret: process.env.SESSION_SECRET,
+	resave: true,
+	saveUninitialized: true,
+	expires: 2592000000
+}));
+
 app.post('/login', (req, res) => {
 	const { userId } = req.body;
 	const auth0Url = `https://${process.env.REACT_APP_AUTH0_DOMAIN}/api/v2/users/${userId}`;
@@ -57,7 +59,6 @@ app.post('/login', (req, res) => {
 				app.get('db').create_user([userData.user_id, userData.email, userData.picture, userData.name])
 				.then((user) => {
 					req.session.user = user[0]
-					console.log(user[0]);
 					res.json({ user: req.session.user });
 				})
 				.catch(error => {
@@ -76,7 +77,9 @@ app.post('/login', (req, res) => {
 });
 
 app.get('/user-data', (req, res) => {
-	res.json({ user: req.session.user });
+	if (req.session.user) {
+		res.json({ user: req.session.user });	
+	}
 });
 
 //START SERVER
