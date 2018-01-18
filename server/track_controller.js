@@ -25,34 +25,9 @@ module.exports = {
             res.err(err)
         })
     },
-    /*
-        dbInstance.query(
-        SELECT * FROM tracks where albums_id = $1, [1]
-        JOIN albums
-        ON tracks.albums_id = albums.id
-        ).then(tracks => {
-            albums_id : req.params.albums_id
-        });
-
-        SELECT * FROM whatever_table_name_1
-        JOIN whatever_table_name_2
-        ON whatever_table_name_1.whatever_the_foreign_key_is = whatever_table_name_2.id
-
-        dbInstance.query(
-        SELECT * FROM tracks where albums_id = $1
-        JOIN albums
-        ON tracks.albums_id = albums.id,
-        [req.params.albums_id]
-        )
-        .then(tracks => {
-            albums_id: req.params.albums_id
-        })
-        .catch(err => {
-            console.log(err)
-            res.err(err)
-        })
-    */
+    
     list: (req, res) => {
+        console.log(req.params.albums_id);
         const dbInstance = req.app.get('db')
         dbInstance.query(
             //JOIN
@@ -64,12 +39,31 @@ module.exports = {
             [req.params.albums_id]
         )
         .then(tracks => {
+            console.log(tracks);
             res.send(tracks);
         })
         .catch(err => {
             console.log(err)
             res.err(err)
         })
+    },
+
+    listAll: (req, res) => {
+        const dbInstance = req.app.get('db')
+        dbInstance.query(
+            //JOIN
+            `SELECT tracks.title, albums.artist_name, albums.release_year, tracks.file_url FROM tracks
+            JOIN albums
+            ON tracks.albums_id = albums.id`
+        )
+            .then(tracks => {
+                console.log(tracks);
+                res.send(tracks);
+            })
+            .catch(err => {
+                console.log(err)
+                res.err(err)
+            })
     },
 
     findOne: (req, res) => {

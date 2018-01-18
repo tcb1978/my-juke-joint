@@ -1,25 +1,3 @@
-.track-display div {
-    display: inline-flex;
-    box-sizing: border-box;
-}
 
-.track-display {
-    max-height: 25em;
-    overflow-y: auto;
-    box-sizing: border-box;
-}
 
-.player-element {
-    margin: 0px 15px;
-    font-size: .75em;
-    line-height: 4;
-}
-
-.album-art {
-    max-width: 5em;
-    max-height: 5em;
-    bottom: 1.75em;
-    display: inline-block;
-    position: relative;
-}
 

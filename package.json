@@ -12,7 +12,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
-    "massive": "^4.6.2",
+    "massive": "^4.6.3",
     "react": "^16.2.0",
     "react-background-slideshow": "^1.0.1",
     "react-dom": "^16.2.0",

@@ -37,6 +37,7 @@ const trackURL = `/api/tracks`
 app.post(trackURL, track_controller.create)
 app.put(`${trackURL}/:id`, track_controller.update)
 app.delete(`${trackURL}/:id`, track_controller.destroy)
+app.get(`/api/tracks`, track_controller.listAll)
 app.get(`/api/albums/:albums_id/tracks`, track_controller.list)
 app.get(`/api/albums/:albums_id/tracks/:id`, track_controller.findOne)
 
