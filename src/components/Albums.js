@@ -54,7 +54,6 @@ class Albums extends Component {
 
     getJukeJointRating(id, value) {
         axios.patch(`/api/albums/${id}`, { jukeboxes: value }).then(response => {
-            const {id, jukeboxes} = response.data
             this.setState({
                 jukeboxes: value
             })
@@ -63,31 +62,34 @@ class Albums extends Component {
 
     render() {
         const album = this.state.albums.map((album, index) => { 
-            console.log(album.id);
-                                return <div key={album.id} className=" album-view-info-cell info-container border-radius">
-                                    <div className="album-element info-element album-title">'{album.title}'</div>
-                                    <div className="album-element info-element album-artist">{album.artist_name}</div>
-                                    <div className="album-element info-element album-release">{album.release_year}</div>
-                                    <div className="album_id ">{album.id}</div>
-                                    <div className="album-controls-box">
-                                        <i className="fa fa-plus-circle album-controls" aria-hidden="true"></i>
-                                        <img className="album-element info-element album-art" src={album.artwork_url} />
-                                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
-                                    </div>
-                                    <div className="jukebox-rating-container">
-                                        <div className="jukebox-rating-left">
-                                            <span>Juke Joint Rating </span>
-                                            <select onChange={ (e) => this.getJukeJointRating(album.id, e.target.value)}>
-                                                <option value="0">0</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
-                                                <option value="3">3</option>
-                                                <option value="4">4</option>
-                                            </select>
-                                        </div>
-                                        <div className="jukebox-rating-right">{this.state.jukeboxes}</div>
-                                    </div>
-                                </div>
+            return (
+                <div key={album.id} className=" album-view-info-cell info-container border-radius">
+                    <div className="album-element info-element album-title">'{album.title}'</div>
+                    <div className="album-element info-element album-artist">{album.artist_name}</div>
+                    <div className="album-element info-element album-release">{album.release_year}</div>
+                    <div className="album_id ">{album.id}</div>
+                    <div className="album-controls-box">
+                    <i className="fa fa-plus-circle album-controls" aria-hidden="true"></i>
+                    <img className="album-element info-element album-art" src={album.artwork_url} />
+                    <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
+                    </div>
+                    <div className="jukebox-rating-container">
+                        <div className="jukebox-rating-left">
+                            <span>Juke Joint Rating </span>
+                            <select onChange={ (e) => this.getJukeJointRating(album.id, e.target.value)}>
+                                <option value="0">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div className="jukebox-rating-right">{
+                            album.jukeboxes !== this.state.jukeboxes ? album.jukeboxes : this.state.jukeboxes
+                        }</div>
+                    </div>
+                </div>
+            )
         })
         return (
             <div className="album-controller">

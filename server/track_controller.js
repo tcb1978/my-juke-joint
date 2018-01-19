@@ -5,7 +5,6 @@ module.exports = {
     destroyTracks: (req, res) => {
         const dbInstance = req.app.get('db')
         const {albums_id} = req.params;
-        console.log(albums_id);
         dbInstance.tracks.destroy({
             albums_id: albums_id,
         })

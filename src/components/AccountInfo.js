@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
@@ -11,14 +11,13 @@ class AccountInfo extends Component {
     componentDidMount() {
         axios.get('/user-data').then(response => {
             if (response.data.user) {
-                this.props.login(response.data.user);
+                this.props.login(response.data.user)
             }
-        });
+        })
     }
 
     render() {
-        const { user } = this.props;
-        console.log(user);
+        const { user } = this.props
         return (
             <div className="controller account-info-controller">
                 <Header />
@@ -38,18 +37,18 @@ class AccountInfo extends Component {
                 <Footer />
             </div>
 
-        );
+        )
     }
 }
 
 function mapStateToProps(state) {
     return {
         user: state.user
-    };
-};
+    }
+}
 
 const mapDispatchToProps = {
     login: login,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AccountInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(AccountInfo)
