@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-import { login } from '../ducks/reducer.js'
+import login from '../ducks/reducer.js'
 import Header from './Header'
 import Footer from './Footer'
 import './AccountInfo.css'

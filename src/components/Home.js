@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { login } from '../ducks/reducer.js'
+import login from '../ducks/reducer.js'
 import { connect } from 'react-redux'
 import axios from 'axios'
 import '../App.css'
