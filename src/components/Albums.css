@@ -22,9 +22,15 @@
     cursor: pointer;
 }
 
+.jukebox-rating-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
 @media (min-width: 414px) {
     .info-element {
-        font-size: 32px;
+        font-size: 30px;
     }
 }
 

@@ -26,6 +26,7 @@ app.get(albumsURL, album_controller.list)
 app.get(`${albumsURL}/:id`, album_controller.findOne)
 app.delete(`${albumsURL}/:id`, album_controller.destroy)
 app.put(`${albumsURL}/:id`, album_controller.update)
+app.put(`${albumsURL}/:id`, album_controller.albumRating)
 
 const trackURL = `/api/tracks`
 app.post(trackURL, track_controller.create)

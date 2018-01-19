@@ -63,12 +63,18 @@ module.exports = {
 
     update: (req, res) => {
         const dbInstance = req.app.get('db')
+        if(req.params) {
+            const { id } = req.params
+        }
         const {
+            id,
             title,
             artist_name,
             release_year,
-            artwork_url
+            artwork_url,
+            jukeboxes
         } = req.body
+        // console.log(req.body)
         const newUpdate = {}
 
         if (title) {
@@ -87,10 +93,40 @@ module.exports = {
             newUpdate.artwork_url = artwork_url
         }
 
+        if (jukeboxes) {
+            newUpdate.jukeboxes = jukeboxes
+        }
+
         dbInstance.albums.update({
                 id: req.params.id,
             }, newUpdate)
             .then(updated => {
+                console.log(updated)
+                res.send(updated)
+            })
+            .catch(err => {
+                console.log(err)
+                res.err(err)
+            })
+    },
+
+    albumRating: (req, res) => {
+        const dbInstance = req.app.get('db')
+        if (req.params) {
+            const { id } = req.params
+        }
+        const {jukeboxes} = req.body
+        const newJukeRating = {}
+
+        if (jukeboxes) {
+            newJukeRating.jukeboxes = jukeboxes
+        }
+
+        dbInstance.albums.update({
+            jukeboxes: req.params.jukeboxes,
+        }, newJukeRating)
+            .then(updated => {
+                console.log(updated)
                 res.send(updated)
             })
             .catch(err => {
@@ -105,7 +141,7 @@ module.exports = {
                 id: req.params.id,
             })
             .then(deleted => {
-                res.status(202).end()
+                res.status(202).send('aldkjfa;sldkfjasd;lkfjasd;lkfjas;dlkfjasd;lkfj')
             })
             .catch(err => {
                 console.log(err)

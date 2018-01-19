@@ -14,9 +14,11 @@ class Albums extends Component {
             release: '',
             artwork: '',
             id: '',
-            tracks: []
+            tracks: [],
+            jukeboxes: 0
         }
         this.removeAlbum = this.removeAlbum.bind(this)
+        this.getJukeJointRating = this.getJukeJointRating.bind(this)
     }
 
     componentDidMount() {
@@ -43,18 +45,23 @@ class Albums extends Component {
     }
 
     removeAlbum(val) {
-        console.log(val);
         axios.delete(`/api/tracks/albums/${val}`).then(response => {
             axios.delete(`/api/albums/${val}`).then(response => {
-                this.setState({
-                    albums: response.data.albums,
-                })
+                this.getAlbums()
+            })
+        })
+    }
+
+    getJukeJointRating(id, val) {
+        axios.put(`/api/albums/${id}`, { jukeboxes: val }).then(response => {
+            
+            this.setState({
+                
             })
         })
     }
 
     render() {
-        console.log(this.state)
         return (
             <div className="album-controller">
                 <div className="controller-box">
@@ -66,10 +73,24 @@ class Albums extends Component {
                                     <div className="album-element info-element album-title">'{album.title}'</div>
                                     <div className="album-element info-element album-artist">{album.artist_name}</div>
                                     <div className="album-element info-element album-release">{album.release_year}</div>
+                                    <div className="album_id ">{album.id}</div>
                                     <div className="album-controls-box">
                                         <i className="fa fa-plus-circle album-controls" aria-hidden="true"></i>
                                         <img className="album-element info-element album-art" src={album.artwork_url} />
                                         <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
+                                    </div>
+                                    <div className="jukebox-rating-container">
+                                        <div className="jukebox-rating-left">
+                                            <span>Juke Joint Rating </span>
+                                            <select onChange={ (e) => this.getJukeJointRating(e.target.value)}>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                            </select>
+                                        </div>
+                                        <div className="jukebox-rating-right">{this.state.jukeboxes}</div>
                                     </div>
                                 </div>
                             })}
