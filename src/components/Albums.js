@@ -54,7 +54,8 @@ class Albums extends Component {
 
     getJukeJointRating(id, val) {
         axios.put(`/api/albums/${id}`, { jukeboxes: val }).then(response => {
-            
+            const albums = response.data
+            console.log(albums);
             this.setState({
                 
             })
