@@ -99,6 +99,7 @@ module.exports = {
 
         dbInstance.albums.update({
                 id: req.params.id,
+                jukeboxes: req.params.jukeboxes
             }, newUpdate)
             .then(updated => {
                 console.log(updated)
@@ -123,8 +124,9 @@ module.exports = {
         }
 
         dbInstance.albums.update({
-            jukeboxes: req.params.jukeboxes,
-        }, newJukeRating)
+            id: req.params.id,
+            jukeboxes: req.body.jukeboxes,
+        })
             .then(updated => {
                 console.log(updated)
                 res.send(updated)
@@ -141,7 +143,7 @@ module.exports = {
                 id: req.params.id,
             })
             .then(deleted => {
-                res.status(202).send('aldkjfa;sldkfjasd;lkfjasd;lkfjas;dlkfjasd;lkfj')
+                res.status(202).end()
             })
             .catch(err => {
                 console.log(err)

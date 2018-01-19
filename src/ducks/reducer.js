@@ -6,7 +6,7 @@ const initialState = {
 const LOGIN = 'LOGIN'
 
 
-
+console.log('hooray');
 export default function(state = initialState, action) {
     switch (action.type) {
         case LOGIN:

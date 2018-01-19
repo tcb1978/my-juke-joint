@@ -52,25 +52,19 @@ class Albums extends Component {
         })
     }
 
-    getJukeJointRating(id, val) {
-        axios.put(`/api/albums/${id}`, { jukeboxes: val }).then(response => {
-            const albums = response.data
-            console.log(albums);
+    getJukeJointRating(id, value) {
+        axios.patch(`/api/albums/${id}`, { jukeboxes: value }).then(response => {
+            const {id, jukeboxes} = response.data
             this.setState({
-                
+                jukeboxes: value
             })
         })
     }
 
     render() {
-        return (
-            <div className="album-controller">
-                <div className="controller-box">
-                    <div className="masthead gradient top-z opacity border-radius">
-                        <h1 className="top-z jukebox-selected">Albums</h1>
-                        <div className="max-verticle-height horizontal-row">
-                            {this.state.albums.map((album, index) => {
-                                return <div key={index} className=" album-view-info-cell info-container border-radius">
+        const album = this.state.albums.map((album, index) => { 
+            console.log(album.id);
+                                return <div key={album.id} className=" album-view-info-cell info-container border-radius">
                                     <div className="album-element info-element album-title">'{album.title}'</div>
                                     <div className="album-element info-element album-artist">{album.artist_name}</div>
                                     <div className="album-element info-element album-release">{album.release_year}</div>
@@ -83,7 +77,7 @@ class Albums extends Component {
                                     <div className="jukebox-rating-container">
                                         <div className="jukebox-rating-left">
                                             <span>Juke Joint Rating </span>
-                                            <select onChange={ (e) => this.getJukeJointRating(e.target.value)}>
+                                            <select onChange={ (e) => this.getJukeJointRating(album.id, e.target.value)}>
                                                 <option value="0">0</option>
                                                 <option value="1">1</option>
                                                 <option value="2">2</option>
@@ -94,7 +88,14 @@ class Albums extends Component {
                                         <div className="jukebox-rating-right">{this.state.jukeboxes}</div>
                                     </div>
                                 </div>
-                            })}
+        })
+        return (
+            <div className="album-controller">
+                <div className="controller-box">
+                    <div className="masthead gradient top-z opacity border-radius">
+                        <h1 className="top-z jukebox-selected">Albums</h1>
+                        <div className="max-verticle-height horizontal-row">
+                            {album}
                         </div>
                     </div>
                 </div>
