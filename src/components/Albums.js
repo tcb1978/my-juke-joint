@@ -19,6 +19,7 @@ class Albums extends Component {
         }
         this.removeAlbum = this.removeAlbum.bind(this)
         this.getJukeJointRating = this.getJukeJointRating.bind(this)
+        // this.addToTopForty = this.addToTopForty.bind(this)
     }
 
     componentDidMount() {
@@ -60,6 +61,7 @@ class Albums extends Component {
         })
     }
 
+
     render() {
         const album = this.state.albums.map((album, index) => { 
             return (
@@ -69,8 +71,15 @@ class Albums extends Component {
                     <div className="album-element info-element album-release">{album.release_year}</div>
                     <div className="album_id ">{album.id}</div>
                     <div className="album-controls-box">
-                        <img className="album-element info-element album-art" src={album.artwork_url} alt="album cover" />
-                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
+                        <form>
+                            <input className="hidden" type="id" name="id" placeholder="id" value={album.id} />
+                            <input className="hidden" type="title" name="title" placeholder="title" value={album.title} />
+                            <input className="hidden" type="artist" name="artist" placeholder="artist" value={album.artist_name} />
+                            <input className="hidden" type="year" name="year" placeholder="year" value={album.release_year} />
+                        </form>
+                        <i className="fa fa-plus-circle album-controls" aria-hidden="true" onClick={() => this.addToTopForty(album)} />
+                        <img className="album-element info-element album-art" src={album.artwork_url} />
+                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true" />
                     </div>
                     <div className="jukebox-rating-container">
                         <div className="jukebox-rating-left">

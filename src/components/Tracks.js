@@ -44,7 +44,7 @@ class Tracks extends Component {
                                         <div className="track-element track-title flex2 line-height">'{track.title}'</div>
                                         <div className="track-element track-artist flex1 line-height">{track.artist_name}</div>
                                         <div className="track-element track-release flex1 line-height">{track.release_year}</div>
-                                        <img className="track-element album-art flex1 line-height" src={track.file_url} />
+                                        <img className="track-element album-art flex1 line-height" src={track.file_url} alt="album artwork"/>
                                     </div>
                                 })}
                             </div>
