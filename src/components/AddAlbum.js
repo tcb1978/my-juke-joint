@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { connect } from 'react-redux'
 import '../App.css'
+import './AddAlbum.css'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -67,21 +68,21 @@ class AddAlbum extends Component {
         return(
         <div className="controller top-forty-controller">
             <Header />
-                <div className="controller nav-controller top-z padded mix-blend">
+                <div className="controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
                     <h1>Include Your Favorite Records!</h1>
                     <div className="form-container">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-element form-input">
-                                <input type="text" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />
+                                <input className="form-input border-radius padded" type="text" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />
                             </div>
                             <div className="form-element form-input">
-                                <input type="artist" name="artist" placeholder="Artist" value={artist} onChange={this.handleArtistChange} />
+                                <input className="form-input border-radius padded" type="artist" name="artist" placeholder="Artist" value={artist} onChange={this.handleArtistChange} />
                             </div>
                             <div className="form-element form-input">
-                                <input type="release" name="release" placeholder="Release" value={release} onChange={this.handleReleaseChange} />
+                                <input className="form-input border-radius padded" type="release" name="release" placeholder="Release" value={release} onChange={this.handleReleaseChange} />
                             </div>
                             <div className="form-element form-input">
-                                <input type="artwork" name="artwork" placeholder="Artwork (Any image url will do!)" value={artwork} onChange={this.handleArtworkChange} />
+                                <input className="form-input border-radius padded" type="artwork" name="artwork" placeholder="Artwork (Any image url will do!)" value={artwork} onChange={this.handleArtworkChange} />
                             </div>
                             <div className="form-element form-album-display">
                                 <div className="form-element album-element-display">
@@ -98,7 +99,7 @@ class AddAlbum extends Component {
                                 </div>
                             </div>
                             <div className="form-element">
-                                <input type="submit" value="Submit" />
+                                <input className="bttn-gradient bttn-primary" type="submit" value="Submit" />
                             </div>
                         </form>
                     </div>

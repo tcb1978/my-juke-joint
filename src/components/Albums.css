@@ -1,45 +1,29 @@
-.horizontal-row {
-    display: -ms-flexbox;
-    display: flex;
-}
-
-.album-view-info-cell.info-container {
-    margin: 2em 1em;
-}
-
-.album-element {
-    width:12em;
-}
-
 .album-controls-box {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
-.album-controls {
-    font-size: 3em;
-    cursor: pointer;
+.album-element.album-art {
+    margin: 10px auto;
 }
 
-.jukebox-rating-container {
+.about-album {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
-@media (min-width: 414px) {
-    .info-element {
-        font-size: 30px;
-    }
+.album-remove {
+    width: 102px;
+    margin: 15px auto;
 }
 
-
-@media (max-width: 414px) {
-    .horizontal-row {
-        display: flow-root;
-    }
-    .album-element {
-        width: 100%;
-    }
+.jukebox-rating-right {
+    padding: 5px;
+    border-radius: 18px;
+    width: 30px;
+    box-sizing: border-box;
+    background: #fff;
+    color: #3D53B5;
 }

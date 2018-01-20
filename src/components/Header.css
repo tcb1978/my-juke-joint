@@ -16,6 +16,12 @@
     margin-top: 1.5em;
 }
 
+.header-avatar {
+    border-radius: 100%;
+    width: 3em;
+    padding: 10%;
+}
+
 @media (min-width:500px) {
     .my-juke-joint {
         font-size: 3em;

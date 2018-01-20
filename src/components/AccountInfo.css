@@ -19,6 +19,10 @@
     line-height: 3;
 }
 
+.auth0-login-container {
+    width: 35%;
+}
+
 @media (max-width: 414px) {
     .logged-in-as-container {
         width: 85%;

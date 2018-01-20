@@ -12,7 +12,7 @@ class Header extends Component {
                     <div className="inner-header-right">
                         <Link to="/" className="my-juke-joint link">JUKE JOINT</Link>
                     </div>
-                    <div className="inner-header-left">{this.props.user ? this.props.user.name : ' '}</div>
+                    <div className="inner-header-left">{this.props.user ? <img src={this.props.user.pictureurl} className="header-avatar"/> : ' '}</div>
                 </section>
             </header>
         )

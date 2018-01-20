@@ -66,16 +66,17 @@ class Albums extends Component {
         const album = this.state.albums.map((album, index) => { 
             return (
                 <div key={album.id} className=" album-view-info-cell info-container border-radius">
-                    <div className="album-element info-element album-title">'{album.title}'</div>
-                    <div className="album-element info-element album-artist">{album.artist_name}</div>
-                    <div className="album-element info-element album-release">{album.release_year}</div>
-                    <div className="album_id ">{album.id}</div>
-                    <div className="album-controls-box">
-                        <i className="fa fa-plus-circle album-controls hidden" aria-hidden="true" onClick={() => this.addToTopForty(album)} />
-                        <img className="album-element info-element album-art" src={album.artwork_url} />
-                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true" />
+                    <div className="about-album">
+                        <div className="album-element info-element album-title">'{album.title}'</div>
+                        <div className="album-element info-element album-artist">{album.artist_name}</div>
+                        <div className="album-element info-element album-release">{album.release_year}</div>
+                        <div className="album_id hidden">{album.id}</div>
                     </div>
-                    <div className="jukebox-rating-container">
+                    <div className="album-controls-box">
+                        <img className="album-element info-element album-art" src={album.artwork_url} />
+                        <button onClick={() => this.removeAlbum(album.id)} class="album-remove bttn-gradient bttn-primary">Remove</button>
+                    </div>
+                    <div className="about-album">
                         <div className="jukebox-rating-left">
                             <span>Juke Joint Rating </span>
                             <select onChange={ (e) => this.getJukeJointRating(album.id, e.target.value)}>
@@ -100,7 +101,7 @@ class Albums extends Component {
                         <div className="modal-top">
                             <h1 className="top-z jukebox-selected">Albums</h1>
                             <Link to={`/add_album`} >
-                                <i className="fa fa-plus-circle album-controls" aria-hidden="true" />
+                                <button class="btn btn-control btn-top-forty bttn-gradient bttn-primary">Add New Album</button>
                             </Link>
                         </div>
                         <div className="max-verticle-height horizontal-row">
