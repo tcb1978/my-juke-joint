@@ -69,9 +69,8 @@ class Albums extends Component {
                     <div className="album-element info-element album-release">{album.release_year}</div>
                     <div className="album_id ">{album.id}</div>
                     <div className="album-controls-box">
-                    <i className="fa fa-plus-circle album-controls" aria-hidden="true"></i>
-                    <img className="album-element info-element album-art" src={album.artwork_url} />
-                    <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
+                        <img className="album-element info-element album-art" src={album.artwork_url} alt="album cover" />
+                        <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true"></i>
                     </div>
                     <div className="jukebox-rating-container">
                         <div className="jukebox-rating-left">

@@ -1,17 +1,32 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import { connect } from 'react-redux'
 import '../App.css'
 import Header from './Header'
 import Footer from './Footer'
 
 class TopForty extends Component {
+    constructor(params) {
+        super()
+        this.state = {
+            albums: [],
+            title: '',
+            artist: '',
+            release: '',
+            artwork: '',
+            id: '',
+            tracks: [],
+            jukeboxes: 0
+        }
+    }
+
     render(){
         return(
         <div className="controller top-forty-controller">
             <Header />
-            <div className="controller-box">
-                <div className="allow-flex-grow"><h1 className="top-z mix-blend">Top 40</h1></div>
-            </div>
+                <div className="controller nav-controller top-z padded mix-blend">
+                    <h1>Top 40</h1>
+                </div>
             <Footer />
         </div>
         )
