@@ -7,7 +7,7 @@ import Randomize from './components/Randomize'
 import Artist from './components/Artist'
 import Albums from './components/Albums'
 import Tracks from './components/Tracks'
-import TopForty from './components/TopForty'
+import AddAlbum from './components/AddAlbum'
 
 export default (
     <HashRouter>
@@ -22,7 +22,7 @@ export default (
                 </Jukebox>
             )} />
             <Route path="/random" component={Randomize} />
-            <Route path="/top_forty" component={TopForty} />
+            <Route path="/add_album" component={AddAlbum} />
         </Switch>
     </HashRouter>
 )

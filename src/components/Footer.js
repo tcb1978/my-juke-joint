@@ -13,7 +13,7 @@ class Footer extends Component {
                     <div className="audio-box">
                         <audio controls="controls">
                             Your browser does not support the &lt;audio&gt; tag.
-                        <source src="../m/example.mp3" />
+                        <source src="#" />
                         </audio>
                     </div>
                 </section>

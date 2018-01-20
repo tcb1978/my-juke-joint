@@ -38,8 +38,6 @@ class Tracks extends Component {
                         <div className="track-display">
                             <div className="max-verticle-height">
                                 {this.state.tracks.map((track, index) => {
-                                    console.log(track, index);
-                                    console.log(track, index);
                                     return <div key={index} className="tracks-view-container info-container inner-masthead-max border-radius">
                                         <div className="track-element track-title flex2 line-height">'{track.title}'</div>
                                         <div className="track-element track-artist flex1 line-height">{track.artist_name}</div>

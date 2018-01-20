@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './Albums.css'
 import '../globalUtilities.css'
+import { Link } from 'react-router-dom'
 
 
 class Albums extends Component {
@@ -19,7 +20,6 @@ class Albums extends Component {
         }
         this.removeAlbum = this.removeAlbum.bind(this)
         this.getJukeJointRating = this.getJukeJointRating.bind(this)
-        // this.addToTopForty = this.addToTopForty.bind(this)
     }
 
     componentDidMount() {
@@ -71,13 +71,7 @@ class Albums extends Component {
                     <div className="album-element info-element album-release">{album.release_year}</div>
                     <div className="album_id ">{album.id}</div>
                     <div className="album-controls-box">
-                        <form>
-                            <input className="hidden" type="id" name="id" placeholder="id" value={album.id} />
-                            <input className="hidden" type="title" name="title" placeholder="title" value={album.title} />
-                            <input className="hidden" type="artist" name="artist" placeholder="artist" value={album.artist_name} />
-                            <input className="hidden" type="year" name="year" placeholder="year" value={album.release_year} />
-                        </form>
-                        <i className="fa fa-plus-circle album-controls" aria-hidden="true" onClick={() => this.addToTopForty(album)} />
+                        <i className="fa fa-plus-circle album-controls hidden" aria-hidden="true" onClick={() => this.addToTopForty(album)} />
                         <img className="album-element info-element album-art" src={album.artwork_url} />
                         <i onClick={ () => this.removeAlbum(album.id) } className="fa fa-minus-circle album-controls" aria-hidden="true" />
                     </div>
@@ -103,7 +97,12 @@ class Albums extends Component {
             <div className="album-controller">
                 <div className="controller-box">
                     <div className="masthead gradient top-z opacity border-radius">
-                        <h1 className="top-z jukebox-selected">Albums</h1>
+                        <div className="modal-top">
+                            <h1 className="top-z jukebox-selected">Albums</h1>
+                            <Link to={`/add_album`} >
+                                <i className="fa fa-plus-circle album-controls" aria-hidden="true" />
+                            </Link>
+                        </div>
                         <div className="max-verticle-height horizontal-row">
                             {album}
                         </div>
