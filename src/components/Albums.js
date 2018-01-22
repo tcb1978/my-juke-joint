@@ -58,6 +58,8 @@ class Albums extends Component {
             this.setState({
                 jukeboxes: value
             })
+        }).then(response => {
+            this.getAlbums()
         })
     }
 
@@ -88,7 +90,7 @@ class Albums extends Component {
                             </select>
                         </div>
                         <div className="jukebox-rating-right">{
-                            album.jukeboxes !== this.state.jukeboxes ? album.jukeboxes : this.state.jukeboxes
+                            this.state.jukeboxes !== album.jukeboxes ? album.jukeboxes : this.state.jukeboxes
                         }</div>
                     </div>
                 </div>

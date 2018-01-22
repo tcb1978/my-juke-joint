@@ -1,0 +1,282 @@
+[
+    {
+        "id": "1010",
+        "title": "Pet Sounds",
+        "artist_name": "the Beach Boys",
+        "release_year": "1966",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bb/PetSoundsCover.jpg/220px-PetSoundsCover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1011",
+        "title": "Let It Be",
+        "artist_name": "the Beatles",
+        "release_year": "1970",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/25/LetItBe.jpg/220px-LetItBe.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1012",
+        "title": "Yankee Hotel Foxtrot",
+        "artist_name": "Wilco",
+        "release_year": "2001",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/1/1c/Yankee_Hotel_Foxtrot_%28Front_Cover%29.png",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1013",
+        "title": "Young Americans",
+        "artist_name": "David Bowie",
+        "release_year": "1975",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b5/Young_americans.jpg/220px-Young_americans.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1014",
+        "title": "Kill 'Em All",
+        "artist_name": "Metallica",
+        "release_year": "1983",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Metallica_-_Kill_%27Em_All_cover.jpg/220px-Metallica_-_Kill_%27Em_All_cover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1015",
+        "title": "Highway 61 Revisited",
+        "artist_name": "Bob Dylan",
+        "release_year": "1965",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/95/Bob_Dylan_-_Highway_61_Revisited.jpg/220px-Bob_Dylan_-_Highway_61_Revisited.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1016",
+        "title": "2112",
+        "artist_name": "Rush",
+        "release_year": "1976",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Rush_2112.jpg/220px-Rush_2112.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1017",
+        "title": "Ritual de lo habitual",
+        "artist_name": "Janes Addiction",
+        "release_year": "1990",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Jane%27s_Addiction-Ritual_de_lo_Habitual.jpg/220px-Jane%27s_Addiction-Ritual_de_lo_Habitual.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1018",
+        "title": "At Folsom Prison",
+        "artist_name": "Johnny Cash",
+        "release_year": "1968",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/bf/Johnny_Cash_At_Folsom_Prison.jpg/220px-Johnny_Cash_At_Folsom_Prison.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1019",
+        "title": "Tonight's the Night",
+        "artist_name": "Neil Young",
+        "release_year": "1975",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/01/Neil_Young_TTN_cover.jpg/220px-Neil_Young_TTN_cover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1020",
+        "title": "Transformer",
+        "artist_name": "Lou Reed",
+        "release_year": "1972",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f1/Loureedtransformer.jpeg/220px-Loureedtransformer.jpeg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1021",
+        "title": "Like a Virgin",
+        "artist_name": "Madonna",
+        "release_year": "1984",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/17/LikeAVirgin1984.png/220px-LikeAVirgin1984.png",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1022",
+        "title": "Band of Gypsys",
+        "artist_name": "Jimi Hendrix",
+        "release_year": "1970",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5c/Band_of_Gypsys_album.jpg/220px-Band_of_Gypsys_album.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1023",
+        "title": "Branded Man",
+        "artist_name": "Merle Haggard",
+        "release_year": "1967",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5b/Branded_Man_Haggard.jpg/220px-Branded_Man_Haggard.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1024",
+        "title": "Green Mind",
+        "artist_name": "Dinosaur Jr",
+        "release_year": "1991",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/14/DinosaurJrGreenMind.jpg/220px-DinosaurJrGreenMind.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1025",
+        "title": "Motörhead",
+        "artist_name": "Motörhead",
+        "release_year": "1977",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/39/Mot%C3%B6rhead_-_Mot%C3%B6rhead_%281977%29.jpg/220px-Mot%C3%B6rhead_-_Mot%C3%B6rhead_%281977%29.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1026",
+        "title": "Here's Little Richard",
+        "artist_name": "Little Richard",
+        "release_year": "1957",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c0/Hereslittlerichard.jpeg/220px-Hereslittlerichard.jpeg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1027",
+        "title": "Live at Hammersmith Apollo",
+        "artist_name": "Nick Cave",
+        "release_year": "2015",
+        "artwork_url": "https://img.discogs.com/qUmIMwXIzt5V6INiFX0bFwXkZ9s=/fit-in/600x533/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-6998486-1431608571-7102.jpeg.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1028",
+        "title": "Nevermind",
+        "artist_name": "Nirvana",
+        "release_year": "1991",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b7/NirvanaNevermindalbumcover.jpg/220px-NirvanaNevermindalbumcover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1029",
+        "title": "(What's the Story) Morning Glory?",
+        "artist_name": "Oasis",
+        "release_year": "1995",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/b1/Oasis_-_%28What%27s_The_Story%29_Morning_Glory_album_cover.jpg/220px-Oasis_-_%28What%27s_The_Story%29_Morning_Glory_album_cover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1030",
+        "title": "Fear of a Black Planet",
+        "artist_name": "Public Enemy",
+        "release_year": "1990",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Fear_of_a_Black_Planet.jpg/220px-Fear_of_a_Black_Planet.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1031",
+        "title": "To Bring You My Love",
+        "artist_name": "PJ Harvey",
+        "release_year": "1995",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/To_Bring_You_My_Love.jpg/220px-To_Bring_You_My_Love.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1032",
+        "title": "I Never Loved a Man the Way I Love You",
+        "artist_name": "Aretha Franklin",
+        "release_year": "1967",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Aretha_Franklin_%E2%80%93_I_Never_Loved_a_Man_the_Way_I_Love_You.jpg/220px-Aretha_Franklin_%E2%80%93_I_Never_Loved_a_Man_the_Way_I_Love_You.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1033",
+        "title": "Lonely and Blue",
+        "artist_name": "Roy Orbison",
+        "release_year": "1961",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Lonely_and_Blue_-_Roy_Orbison.jpg/220px-Lonely_and_Blue_-_Roy_Orbison.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1034",
+        "title": "Sweetheart of the Rodeo",
+        "artist_name": "the Byrds",
+        "release_year": "1968",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/TheByrdsSweetheartoftheRodeo.jpg/220px-TheByrdsSweetheartoftheRodeo.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1035",
+        "title": "Heartbreaker",
+        "artist_name": "Ryan Adams",
+        "release_year": "2000",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/0a/RyanAdamsHeartbreaker.jpg/220px-RyanAdamsHeartbreaker.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1036",
+        "title": "London Calling",
+        "artist_name": "the Clash",
+        "release_year": "1979",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/00/TheClashLondonCallingalbumcover.jpg/220px-TheClashLondonCallingalbumcover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1037",
+        "title": "My Generation",
+        "artist_name": "The Who",
+        "release_year": "1965",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/My_Generation.jpg/220px-My_Generation.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1038",
+        "title": "Yeezus",
+        "artist_name": "Kanye West",
+        "release_year": "2013",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Yeezus_album_cover.png/220px-Yeezus_album_cover.png",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1039",
+        "title": "Garth Brooks in... The Life of Chris Gaines",
+        "artist_name": "Garth Brooks",
+        "release_year": "1999",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/0/06/ChrisGainsAlbum.PNG",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1040",
+        "title": "Purple Rain",
+        "artist_name": "Prince",
+        "release_year": "1984",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/9/9c/Princepurplerain.jpg/220px-Princepurplerain.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1041",
+        "title": "Dusty in Memphis",
+        "artist_name": "Dusty Springfield",
+        "release_year": "1969",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/cf/Dusty_Springfield%2C_Dusty_in_Memphis_%281969%29.png/220px-Dusty_Springfield%2C_Dusty_in_Memphis_%281969%29.png",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1042",
+        "title": "Wildflowers",
+        "artist_name": "Tom Petty",
+        "release_year": "1994",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/d/d8/Tom_Petty_Wildflowers.jpg/220px-Tom_Petty_Wildflowers.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1043",
+        "title": "Elvis Presley",
+        "artist_name": "Elvis Presley",
+        "release_year": "1956",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Elvis_Presley_LPM-1254_Album_Cover.jpg/220px-Elvis_Presley_LPM-1254_Album_Cover.jpg",
+        "jukeboxes": 0
+    },
+    {
+        "id": "1044",
+        "title": "Raw Power",
+        "artist_name": "The Stooges",
+        "release_year": "1973",
+        "artwork_url": "https://upload.wikimedia.org/wikipedia/en/thumb/2/27/StoogesRawPower.jpg/220px-StoogesRawPower.jpg",
+        "jukeboxes": 0
+    }
+]

@@ -12,10 +12,6 @@
     justify-content: space-between;
 }
 
-.inner-header-left {
-    margin-top: 1.5em;
-}
-
 .header-avatar {
     border-radius: 100%;
     width: 3em;

@@ -6,6 +6,8 @@
 
 .album-element.album-art {
     margin: 10px auto;
+    max-width: 15em;
+    max-height: 15em;
 }
 
 .about-album {
