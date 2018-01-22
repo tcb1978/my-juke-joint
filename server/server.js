@@ -27,15 +27,15 @@ app.get(`${albumsURL}/:id`, album_controller.findOne)
 app.delete(`${albumsURL}/:id`, album_controller.destroy)
 app.put(`${albumsURL}/:id`, album_controller.update)
 app.patch(`${albumsURL}/:id`, album_controller.albumRating)
+app.get(`${albumsURL}/:albums_id/tracks`, track_controller.list)
+app.get(`${albumsURL}/:albums_id/tracks/:id`, track_controller.findOne)
 
 const trackURL = `/api/tracks`
 app.post(trackURL, track_controller.create)
 app.put(`${trackURL}/:id`, track_controller.update)
 app.delete(`${trackURL}/:id`, track_controller.destroy)
-app.delete(`/api/tracks/albums/:albums_id`, track_controller.destroyTracks)
-app.get(`/api/tracks`, track_controller.listAll)
-app.get(`/api/albums/:albums_id/tracks`, track_controller.list)
-app.get(`/api/albums/:albums_id/tracks/:id`, track_controller.findOne)
+app.delete(`${trackURL}/albums/:albums_id`, track_controller.destroyTracks)
+app.get(`${trackURL}`, track_controller.listAll)
 
 
 //LOGIN

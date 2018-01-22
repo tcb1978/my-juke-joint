@@ -76,7 +76,7 @@ class Albums extends Component {
                     </div>
                     <div className="album-controls-box">
                         <img className="album-element info-element album-art" src={album.artwork_url} />
-                        <button onClick={() => this.removeAlbum(album.id)} class="album-remove bttn-gradient bttn-primary">Remove</button>
+                        <button onClick={() => this.removeAlbum(album.id)} className="album-remove bttn-gradient bttn-primary">Remove</button>
                     </div>
                     <div className="about-album">
                         <div className="jukebox-rating-left">
@@ -103,7 +103,7 @@ class Albums extends Component {
                         <div className="modal-top">
                             <h1 className="top-z jukebox-selected">Albums</h1>
                             <Link to={`/add_album`} >
-                                <button class="btn btn-control btn-top-forty bttn-gradient bttn-primary">Add New Album</button>
+                                <button className="btn btn-control btn-top-forty bttn-gradient bttn-primary">Add New Album</button>
                             </Link>
                         </div>
                         <div className="max-verticle-height horizontal-row">

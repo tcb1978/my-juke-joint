@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import './Background-Slideshow.css';
+import './Background-Slideshow.css'
 import BackgroundSlideshow from 'react-background-slideshow'
+
+
 
 import image1 from './img/alice.jpg'
 import image2 from './img/beachboys.jpg'
