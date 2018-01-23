@@ -5,10 +5,7 @@ import '../App.css'
 import './AddAlbum.css'
 import Header from './Header'
 import Footer from './Footer'
-import SearchForm from './SearchForm'
-import ResultList from './ResultList'
-import superagent from 'superagent'
-import jsonp from 'superagent-jsonp'
+import WikipediaViewer from './WikipediaViewer';
 
 
 class AddAlbum extends Component {
@@ -19,10 +16,7 @@ class AddAlbum extends Component {
             titleValue: '',
             artistValue: '',
             releaseValue: '',
-            artworkValue: '',
-            results: [
-                '', [], [], []
-            ]
+            artworkValue: ''
         }
         this.handleTitleChange = this.handleTitleChange.bind(this)
         this.handleArtistChange = this.handleArtistChange.bind(this)
@@ -68,16 +62,6 @@ class AddAlbum extends Component {
         )
     }
 
-    handleSearch(searchTerm) {
-        axios.get(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&format=json`).then(response => {
-            alert('Fuck Yeah!!')
-            console.log(response);
-            this.setState({ 
-                results: response.body 
-            })
-        })
-    }
-
     render(){
         const title = this.state.titleValue
         const artist = this.state.artistValue
@@ -88,8 +72,7 @@ class AddAlbum extends Component {
             <Header />
                 <div className="controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
                     <h1>Include Your Favorite Records!</h1>
-                    <SearchForm onSearch={this.handleSearch.bind(this)} />
-                    <ResultList results={this.state.results} />
+                    <WikipediaViewer />
                     <div className="form-container">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-element form-input">
