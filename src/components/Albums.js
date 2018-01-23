@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import axios from 'axios'
 import './Albums.css'
 import '../globalUtilities.css'
 import { Link } from 'react-router-dom'
+require('dotenv').config() 
 
 
 class Albums extends Component {
@@ -16,7 +17,8 @@ class Albums extends Component {
             artwork: '',
             id: '',
             tracks: [],
-            jukeboxes: 0
+            jukeboxes: 0,
+            searchTerm: ''
         }
         this.removeAlbum = this.removeAlbum.bind(this)
         this.getJukeJointRating = this.getJukeJointRating.bind(this)
@@ -63,6 +65,10 @@ class Albums extends Component {
         })
     }
 
+    
+
+    
+
 
     render() {
         const album = this.state.albums.map((album, index) => { 
@@ -93,6 +99,7 @@ class Albums extends Component {
                             this.state.jukeboxes !== album.jukeboxes ? album.jukeboxes : this.state.jukeboxes
                         }</div>
                     </div>
+                    
                 </div>
             )
         })
