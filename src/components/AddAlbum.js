@@ -5,7 +5,6 @@ import '../App.css'
 import './AddAlbum.css'
 import Header from './Header'
 import Footer from './Footer'
-import WikipediaViewer from './WikipediaViewer';
 
 
 class AddAlbum extends Component {
@@ -72,7 +71,7 @@ class AddAlbum extends Component {
             <Header />
                 <div className="controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
                     <h1>Include Your Favorite Records!</h1>
-                    <WikipediaViewer />
+                    {/*<WikipediaViewer />*/}
                     <div className="form-container">
                         <form onSubmit={this.handleSubmit}>
                             <div className="form-element form-input">

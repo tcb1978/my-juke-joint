@@ -37,7 +37,11 @@ app.delete(`${trackURL}/:id`, track_controller.destroy)
 app.delete(`${trackURL}/albums/:albums_id`, track_controller.destroyTracks)
 app.get(`${trackURL}`, track_controller.listAll)
 
-
+// app.get(`/wiki/:searchTerm`,(req, res) => {
+// 	axios.get(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${req.params.searchTerm}&format=json`).then(response => {
+// 		res.status(200).json(response.data)
+// 	})
+// })
 
 //LOGIN
 app.use(session({

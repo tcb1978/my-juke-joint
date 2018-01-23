@@ -10,12 +10,7 @@ class Footer extends Component {
         return (
             <footer className="App-footer gradient top-z">
                 <section className="inner-footer">
-                    <div className="audio-box">
-                        <audio controls="controls">
-                            Your browser does not support the &lt;audio&gt; tag.
-                        <source src="#" />
-                        </audio>
-                    </div>
+                    <div className="audio-box"></div>
                 </section>
             </footer>
         )

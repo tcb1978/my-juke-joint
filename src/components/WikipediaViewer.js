@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import SearchForm from './SearchForm'
-import ResultList from './ResultList'
 import axios from 'axios'
-class WikipediaViewer extends Component {
 
+class WikipediaViewer extends Component {
     constructor() {
         super()
         this.state = {
@@ -15,20 +13,40 @@ class WikipediaViewer extends Component {
     }
 
     handleSearch(searchTerm) {
-        alert('handleSearch')
-        console.log(searchTerm);
-        axios.get(`https://en.wikipedia.org/w/api.php?action=opensearch&search=${searchTerm}&format=json`).then(response => {
+        axios.get(`/wiki/${searchTerm}`).then(response => {
+            console.log(response);
             this.setState({
-                results: response.body
+                results : response
             })
         })
     }
 
+    handleInputChange(event) {
+        this.setState({
+            searchTerm: event.target.value
+        })
+    }
+
+    handleSubmit(event) {
+        event.preventDefault();
+        let searchTerm = this.state.searchTerm.trim()
+
+        if (!searchTerm) {
+            return;
+        }
+        this.setState({ 
+            searchTerm: searchTerm 
+        })
+    }
+
     render() {
-        return (
-            <div className="wrapper">
-                <SearchForm onSearch={this.handleSearch.bind(this)} />
-                <ResultList results={this.state.results} />
+        return(
+            <div className="search-box-container" >
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <input className="search-box-text" type="text" placeholder="Search for something..." onChange={this.handleInputChange.bind(this)} value={this.state.searchTerm} />
+                </form>
+                <div>{this.state.searchTerm}</div>
+                <div>{this.state.results}</div>
             </div>
         )
     }
