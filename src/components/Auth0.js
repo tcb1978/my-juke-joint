@@ -8,6 +8,7 @@ import '../App.css'
 import './Auth0.css'
 import '../globalUtilities.css'
 
+
 class Auth0 extends Component {
     constructor() {
         super()
@@ -36,7 +37,9 @@ class Auth0 extends Component {
 
     render() {
         return (
+            
             <div onClick={this.login} className="auth0-login-container gradient top-z border-radius box-shadow opacity padded">Log in</div>
+            
         )
     }
 }

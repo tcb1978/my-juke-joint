@@ -6,6 +6,32 @@ import { login } from '../ducks/reducer.js'
 import Header from './Header'
 import Footer from './Footer'
 import './AccountInfo.css'
+import { StyleSheet, css } from 'aphrodite'
+
+const styles = StyleSheet.create({
+    noMargin: {
+        margin : '0 0'
+    },
+    avatar : {
+        borderRadius: '100%',
+        width: '10em',
+        margin: '0 0',
+        '@media(min-width: 640px) and (min-height: 360px)': {
+            display: 'none'
+        }
+    },
+    acctInfo : {
+        lineHeight: '3',
+    },
+    acctInfoLineItem: {
+        lineHeight: '2'
+    },
+    displayNone : {
+        '@media(min-width: 640px) and (min-height: 360px)': {
+            display: 'none'
+        }
+    }
+})
 
 class AccountInfo extends Component {
     componentDidMount() {
@@ -22,12 +48,12 @@ class AccountInfo extends Component {
             <div className="controller account-info-controller">
                 <Header />
                     <div className="logged-in-as-container top-z gradient border-radius padded opacity">
-                        {user && <div className="acct-info logged-in-as">
-                        <h1>Account Info</h1>
-                        <img src={user.pictureurl} alt="user" className="avatar" />
-                        <div>You are logged in as:</div>
-                        <div className="acct-info user-name">{user.name}</div>
-                            <div className="acct-info ">{user.email}</div>
+                        {user && <div className={css(styles.acctInfo)}>
+                        <h1 className={css(styles.noMargin)}>Account Info</h1>
+                        <img src={user.pictureurl} alt="user" className={css(styles.avatar)} />
+                        <div className={css(styles.displayNone)}>You are logged in as:</div>
+                        <div className={css(styles.acctInfoLineItem)}>{user.name}</div>
+                        <div className={css(styles.acctInfoLineItem)}>{user.email}</div>
                             <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
                         </div>}
                         {!user && <div className="not-logged-in">

@@ -8,20 +8,3 @@
     width: 80%;
     margin: 1em auto;
 }
-
-.form-album-display {
-    display: flex;
-    justify-content: space-between;
-    margin: 5% 0 5% 0;
-}
-
-@media (max-width:499px) {
-    .form-album-display {
-        flex-direction: column;
-    }
-
-    .form-input {
-        width: 80%;
-        margin: .25em auto;
-    }
-}

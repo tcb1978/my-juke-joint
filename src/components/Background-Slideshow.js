@@ -1,7 +1,16 @@
 import React, { Component } from 'react'
-import './Background-Slideshow.css'
 import BackgroundSlideshow from 'react-background-slideshow'
+import { StyleSheet, css } from 'aphrodite'
 
+const styles = StyleSheet.create({
+    background: {
+        position: 'absolute',
+        width: '100%',
+        backgroundSize: 'cover',
+        objectFit: 'fill',
+        height: '100vh'
+    }
+})
 
 
 const image1 = 'https://s3-us-west-1.amazonaws.com/juke-joint/alice.jpg'
@@ -49,7 +58,7 @@ const image41 = 'https://s3-us-west-1.amazonaws.com/juke-joint/zep.jpg'
 export default class Slideshow extends Component {
     render() {
         return (
-            <div className="BackgroundSlideshow">
+            <div className={css(styles.background)}>
                 <BackgroundSlideshow images={[
                     image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11, image12, image13, image14, image15, image16, image17, image18, image19, image20, image21, image22, image23, image24, image25, image26, image27, image28, image29, image30, image31, image32, image33, image34, image35, image36, image37, image38, image39, image40, image41
                 ]} />

@@ -1,19 +1,7 @@
-.album-controls-box {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-}
-
 .album-element.album-art {
     margin: 10px auto;
     max-width: 15em;
     max-height: 15em;
-}
-
-.about-album {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
 .album-remove {
@@ -21,11 +9,96 @@
     margin: 15px auto;
 }
 
-.jukebox-rating-right {
-    padding: 5px;
-    border-radius: 18px;
-    width: 30px;
-    box-sizing: border-box;
-    background: #fff;
-    color: #3D53B5;
+
+/*iPad Pro*/
+@media screen and (max-width:1124px) and (max-height:1366px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 74vh;
+    }
 }
+@media screen and (max-width:1366px) and (max-height:1124px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 64vh;
+    }
+}
+/*iPad Pro*/
+
+/*iPad*/
+@media screen and (max-width:768px) and (max-height:1024px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 64vh;
+    }
+}
+
+@media screen and (max-width:1024px) and (max-height:768px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 64vh;
+    }
+}
+/*iPad*/
+
+/*MacBook Pro 13*/
+
+@media screen and (max-width:1105px) and (max-height:733px) {
+        .max-verticle-height.horizontal-row {
+        max-height: 52vh;
+    }
+}
+
+
+/*MacBook Pro 13*/
+
+/*iPhone X*/
+@media screen and (max-width:768px) and (max-height:1024px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 58vh;
+    }
+}
+
+@media screen and (max-width:1024px) and (max-height:768px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 28vh;
+    }
+}
+/*iPhone X*/
+
+/*iPhone 8 Plus*/
+@media screen and (max-width:414px) and (max-height:736px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 58vh;
+    }
+}
+
+@media screen and (max-width:736px) and (max-height:414px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 32vh;
+    }
+}
+/*iPhone 8 Plus*/
+
+/*iPhone 8*/
+@media screen and (max-width:414px) and (max-height:736px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 58vh;
+    }
+}
+
+@media screen and (max-width:667px) and (max-height:375px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 28vh;
+    }
+}
+/*iPhone 8*/
+
+/*Galaxy S5*/
+@media screen and (max-width:360px) and (max-height:640px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 58vh;
+    }
+}
+@media screen and (max-width:640px) and (max-height:360px) {
+    .max-verticle-height.horizontal-row {
+        max-height: 24vh;
+    }
+}
+/*Galaxy S5*/

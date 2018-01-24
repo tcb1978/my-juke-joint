@@ -5,6 +5,30 @@ import '../App.css'
 import './AddAlbum.css'
 import Header from './Header'
 import Footer from './Footer'
+import { StyleSheet, css } from 'aphrodite'
+
+const styles = StyleSheet.create({
+    formInput : {
+        width: '80%',
+        margin: '1em auto',
+        '@media (min-width: 499px)' : {
+            width: '80%',
+            margin: '.25em auto'
+        }
+    },
+    formAlbumDisplay: {
+        display: 'flex',
+        justifyContent: 'space-between',
+        margin: '5 % 0 5% 0',
+        '@media (min-width: 499px)': {
+            flexDirection: 'row',
+            height: '25px'
+        }
+    },
+    albumElementDisplay : {
+        textTransform: 'uppercase'
+    }
+})
 
 
 class AddAlbum extends Component {
@@ -72,31 +96,30 @@ class AddAlbum extends Component {
                 <div className="controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
                     <h1>Include Your Favorite Records!</h1>
                     {/*<WikipediaViewer />*/}
-                    <div className="form-container">
                         <form onSubmit={this.handleSubmit}>
-                            <div className="form-element form-input">
+                            <div className={css(styles.formInput)}>
                                 <input className="form-input border-radius padded" type="text" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />
                             </div>
-                            <div className="form-element form-input">
+                            <div className={css(styles.formInput)}>
                                 <input className="form-input border-radius padded" type="artist" name="artist" placeholder="Artist" value={artist} onChange={this.handleArtistChange} />
                             </div>
-                            <div className="form-element form-input">
+                            <div className={css(styles.formInput)}>
                                 <input className="form-input border-radius padded" type="release" name="release" placeholder="Release" value={release} onChange={this.handleReleaseChange} />
                             </div>
-                            <div className="form-element form-input">
+                            <div className={css(styles.formInput)}>
                                 <input className="form-input border-radius padded" type="artwork" name="artwork" placeholder="Artwork (Any image url will do!)" value={artwork} onChange={this.handleArtworkChange} />
                             </div>
-                            <div className="form-element form-album-display">
-                                <div className="form-element album-element-display">
+                            <div className={css(styles.formAlbumDisplay)}>
+                                <div className={css(styles.albumElementDisplay)}>
                                     {title}
                                 </div>
-                                <div className="form-element album-element-display">
+                                <div className={css(styles.albumElementDisplay)}>
                                     {artist}
                                 </div>
-                                <div className="form-element album-element-display">
+                                <div className={css(styles.albumElementDisplay)}>
                                     {release}
                                 </div>
-                                <div className="form-element album-element-display">
+                                <div>
                                     {artwork}
                                 </div>
                             </div>
@@ -104,7 +127,6 @@ class AddAlbum extends Component {
                                 <input className="bttn-gradient bttn-primary" type="submit" value="Submit" />
                             </div>
                         </form>
-                    </div>
                 </div>
             <Footer />
         </div>

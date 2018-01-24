@@ -1,5 +1,6 @@
 .App {
   overflow-y: hidden;
+  height: 100vh;
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -89,3 +90,14 @@ body .auth0-lock-container .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-
   width: 80%;
   margin: 0 auto;
 }
+
+
+
+/* RESPONSEIVE */
+
+/* ----------- Galaxy S3 ----------- */
+
+
+
+
+

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css'
 import './Footer.css'
-import Facebook from './FontAwesomeFaceBook'//dont erase
-// import Twitter from './FontAwesomeTwitter'
 
 class Footer extends Component {
 

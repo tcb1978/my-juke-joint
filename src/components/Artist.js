@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './Artist.css'
 import '../globalUtilities.css'
+import { StyleSheet, css } from 'aphrodite'
+
+const styles = StyleSheet.create({
+    controllerBox: {
+        display: 'flex',
+        clear: 'both'
+    }
+})
 
 
 class Artist extends Component {
@@ -30,7 +38,7 @@ class Artist extends Component {
     render() {
         return (
             <div className="artist-controller">
-                <div className="controller-box">
+                <div className={css(styles.controllerBox)}>
                     <div className="masthead gradient top-z opacity border-radius">
                         <h1 className="top-z jukebox-selected">Artist</h1>
                         <div className="max-verticle-height">

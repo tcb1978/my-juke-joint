@@ -1,0 +1,302 @@
+{
+	"id": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+	"name": "jukeJoint",
+	"description": "",
+	"order": [
+		"c5d77418-7f8d-433e-cc17-deaab9f0768e",
+		"8747e966-fbaa-33b8-2be3-c9e288ba8142",
+		"919f45a3-6075-e9f6-b89c-749aa4fe9690",
+		"f9821b48-aefd-c0cd-e569-dbcdc1aaaa26",
+		"d45fa65c-4451-d946-e578-7baa7dac6c62"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1516813265051,
+	"owner": 0,
+	"public": false,
+	"events": [],
+	"variables": [],
+	"auth": null,
+	"requests": [
+		{
+			"id": "8747e966-fbaa-33b8-2be3-c9e288ba8142",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/albums",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "43d6a6ed-ffc5-4454-81a3-91f540ee7bec",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Response time is less than 200ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(200);",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"pm.test(\"Body has id\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"title\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"artist_name\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"artwork_url\");",
+							"});",
+							"",
+							"pm.test(\"Body matches integer\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"jukeboxes\");",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:3000/api/albums",
+			"description": "albums post with enpoint tests",
+			"descriptionFormat": "html",
+			"time": 1516813327713,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Response time is less than 200ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(200);\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});\n\npm.test(\"Body has id\", function () {\n    pm.expect(pm.response.text()).to.include(\"id\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"title\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"artist_name\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"artwork_url\");\n});\n\npm.test(\"Body matches integer\", function () {\n    pm.expect(pm.response.text()).to.include(\"jukeboxes\");\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n    \"title\": \"Elvis Presley\",\n    \"artist_name\": \"Elvis Presley\",\n    \"release_year\": \"1956\",\n    \"artwork_url\": \"https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Elvis_Presley_LPM-1254_Album_Cover.jpg/220px-Elvis_Presley_LPM-1254_Album_Cover.jpg\",\n    \"jukeboxes\": 0\n}"
+		},
+		{
+			"id": "919f45a3-6075-e9f6-b89c-749aa4fe9690",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "http://localhost:3000/api/tracks/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "111c6b56-7bf7-4e54-b4d5-1401d91f1d3c",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							"",
+							"pm.test(\"Body matches integer\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"albums_id\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"title\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"track_length\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"file_url\");",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "POST",
+			"collectionId": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+			"data": [],
+			"dataMode": "raw",
+			"name": "http://localhost:3000/api/tracks/",
+			"description": "post to tracks with enpoint tests",
+			"descriptionFormat": "html",
+			"time": 1516813591477,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "\n\npm.test(\"Body matches integer\", function () {\n    pm.expect(pm.response.text()).to.include(\"albums_id\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"title\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"track_length\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"file_url\");\n});",
+			"currentHelper": null,
+			"helperAttributes": null,
+			"rawModeData": "{\n\t\"title\" : \"Reservations\",\n\t\"albums_id\" : \"1012\",\n\t\"track_length\" : \"3:36\",\n\t\"file_url\" : \"https://upload.wikimedia.org/wikipedia/en/1/1c/Yankee_Hotel_Foxtrot_%28Front_Cover%29.png\"\n}"
+		},
+		{
+			"id": "c5d77418-7f8d-433e-cc17-deaab9f0768e",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/albums",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9be51b4d-60e0-4810-acd5-f9f3e92883c1",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"id\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"title\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"artist_name\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"release_year\");",
+							"});",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"artwork_url\");",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:3000/api/albums",
+			"description": "albums get with enpoint tests",
+			"descriptionFormat": "html",
+			"time": 1516813267936,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"id\");\n});\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"title\");\n});\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"artist_name\");\n});\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"release_year\");\n});\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"artwork_url\");\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "d45fa65c-4451-d946-e578-7baa7dac6c62",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/albums/1051",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "92d10cb6-60d6-4296-842e-1c7a3c90da73",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(202);",
+							"});",
+							"",
+							"pm.test(\"Successful Delete request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([202]);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "DELETE",
+			"collectionId": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:3000/api/albums/1051",
+			"description": "album delete with enpoint test",
+			"descriptionFormat": "html",
+			"time": 1516813870014,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(202);\n});\n\npm.test(\"Successful Delete request\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([202]);\n});\n\npm.test(\"Response time is less than 1000ms\", function () {\n    pm.expect(pm.response.responseTime).to.be.below(1000);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		},
+		{
+			"id": "f9821b48-aefd-c0cd-e569-dbcdc1aaaa26",
+			"headers": "",
+			"headerData": [],
+			"url": "http://localhost:3000/api/tracks/",
+			"queryParams": [],
+			"pathVariables": {},
+			"pathVariableData": [],
+			"events": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "0c0b2d87-437b-4e01-8273-31190937a1a5",
+						"type": "text/javascript",
+						"exec": [
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"title\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"artist_name\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"release_year\");",
+							"});",
+							"",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"file_url\");",
+							"});",
+							"",
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						]
+					}
+				}
+			],
+			"auth": null,
+			"method": "GET",
+			"collectionId": "c503ad19-b692-d445-3d00-8efc8f53f7fa",
+			"data": null,
+			"dataMode": "params",
+			"name": "http://localhost:3000/api/tracks/",
+			"description": "get from tracks with enpoint tests",
+			"descriptionFormat": "html",
+			"time": 1516813670117,
+			"version": 2,
+			"responses": [],
+			"preRequestScript": null,
+			"tests": "pm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"title\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"artist_name\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"release_year\");\n});\n\npm.test(\"Body matches string\", function () {\n    pm.expect(pm.response.text()).to.include(\"file_url\");\n});\n\npm.test(\"Status code is 200\", function () {\n    pm.response.to.have.status(200);\n});",
+			"currentHelper": null,
+			"helperAttributes": null
+		}
+	]
+}

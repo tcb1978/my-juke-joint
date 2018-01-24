@@ -1,9 +1,39 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import './Albums.css'
+import './Artist.css'
 import '../globalUtilities.css'
 import { Link } from 'react-router-dom'
+import { StyleSheet, css } from 'aphrodite'
 require('dotenv').config() 
+
+
+const styles = StyleSheet.create({
+    albumControlsBox : {
+        display: 'flex',
+        flexDirection: 'column'
+    },
+    aboutAlbum: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-around'
+    },
+    jukeboxRatingRight : {
+        padding: '5px',
+        borderRadius: '18px',
+        width: '30px',
+        boxSizing: 'border-box',
+        background: '#fff',
+        color: '#3D53B5'
+    },
+    tracksHeading: {
+        display: 'inline-block'
+    },
+    modal : {
+        display: 'flex',
+        flexDirection : 'column'
+    }
+})
 
 
 class Albums extends Component {
@@ -65,26 +95,21 @@ class Albums extends Component {
         })
     }
 
-    
-
-    
-
-
     render() {
         const album = this.state.albums.map((album, index) => { 
             return (
                 <div key={album.id} className=" album-view-info-cell info-container border-radius">
-                    <div className="about-album">
+                    <div className={css(styles.aboutAlbum)}>
                         <div className="album-element info-element album-title">'{album.title}'</div>
                         <div className="album-element info-element album-artist">{album.artist_name}</div>
                         <div className="album-element info-element album-release">{album.release_year}</div>
                         <div className="album_id hidden">{album.id}</div>
                     </div>
-                    <div className="album-controls-box">
-                        <img className="album-element info-element album-art" src={album.artwork_url} />
+                    <div className={css(styles.albumControlsBox)}>
+                        <img className="album-element info-element album-art" src={album.artwork_url} alt="album artwork"/>
                         <button onClick={() => this.removeAlbum(album.id)} className="album-remove bttn-gradient bttn-primary">Remove</button>
                     </div>
-                    <div className="about-album">
+                    <div className={css(styles.aboutAlbum)}>
                         <div className="jukebox-rating-left">
                             <span>Juke Joint Rating </span>
                             <select onChange={ (e) => this.getJukeJointRating(album.id, e.target.value)}>
@@ -95,7 +120,7 @@ class Albums extends Component {
                                 <option value="4">4</option>
                             </select>
                         </div>
-                        <div className="jukebox-rating-right">{
+                        <div className={css(styles.jukeboxRatingRight)}>{
                             this.state.jukeboxes !== album.jukeboxes ? album.jukeboxes : this.state.jukeboxes
                         }</div>
                     </div>
@@ -107,8 +132,8 @@ class Albums extends Component {
             <div className="album-controller">
                 <div className="controller-box">
                     <div className="masthead gradient top-z opacity border-radius">
-                        <div className="modal-top">
-                            <h1 className="top-z jukebox-selected">Albums</h1>
+                        <div className={css(styles.modal)}>
+                            <div className={css(styles.tracksHeading)}><h1 className="top-z jukebox-selected">Albums</h1></div>
                             <Link to={`/add_album`} >
                                 <button className="btn btn-control btn-top-forty bttn-gradient bttn-primary">Add New Album</button>
                             </Link>
