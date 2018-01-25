@@ -7,10 +7,11 @@ const session = require('express-session')
 const album_controller = require(__dirname + '/album_controller.js')
 const track_controller = require(__dirname + '/track_controller.js')
 const axios = require('axios')
+const path = require('path')
 
 //EXPRESS
 const app = express()
-
+app.use(express.static(`${__dirname}/../build`))
 massive(process.env.CONNECTION_STRING)
 	.then(db => {
 		app.set('db', db)
@@ -87,6 +88,11 @@ app.get('/user-data', (req, res) => {
 		res.json({ user: req.session.user });	
 	}
 });
+
+
+app.get('*', (req, res) => {
+	res.sendFile(path.join(__dirname, '../build/index.html'));
+})
 
 //START SERVER
 const port = 3005
