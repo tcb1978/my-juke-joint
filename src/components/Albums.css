@@ -9,6 +9,11 @@
     margin: 15px auto;
 }
 
+.max-verticle-height.horizontal-row {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 
 
 @media screen and (min-width:1366px){
@@ -59,7 +64,7 @@
 }
 @media screen and (max-width:812px) and (max-height:375px) {
     .max-verticle-height.horizontal-row {
-        max-height: 28vh;
+        max-height: 38vh;
     }
 }
 /*iPhone X*/
@@ -73,7 +78,7 @@
 
 @media screen and (max-width:736px) and (max-height:414px) {
     .max-verticle-height.horizontal-row {
-        max-height: 32vh;
+        max-height: 44vh;
     }
 }
 /*iPhone 8 Plus*/
@@ -87,7 +92,7 @@
 
 @media screen and (max-width:667px) and (max-height:375px) {
     .max-verticle-height.horizontal-row {
-        max-height: 28vh;
+        max-height: 38vh;
     }
 }
 /*iPhone 8*/
@@ -97,10 +102,20 @@
     .max-verticle-height.horizontal-row {
         max-height: 58vh;
     }
+    .album-element.album-art {
+        margin: 10px auto;
+        max-width: 10em;
+        max-height: 10em;
+    }
 }
 @media screen and (max-width:640px) and (max-height:360px) {
     .max-verticle-height.horizontal-row {
-        max-height: 24vh;
+        max-height: 36vh;
+    }
+    .album-element.album-art {
+        margin: 10px auto;
+        max-width: 10em;
+        max-height: 10em;
     }
 }
 /*Galaxy S5*/

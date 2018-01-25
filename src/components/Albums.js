@@ -31,7 +31,23 @@ const styles = StyleSheet.create({
     },
     modal : {
         display: 'flex',
-        flexDirection : 'column'
+        flexDirection : 'column',
+        '@media screen and (max-width:812px) and (max-height:414px)': {
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-evenly'
+        }
+    },
+    addNewAlbum : {
+        display: 'inline-block',
+        position: 'relative',
+        bottom: '1em',
+        '@media screen and (max-width:360px) and (max-height:640px)': {
+            bottom: '0em'
+        },
+        '@media screen and (max-width:812px) and (max-height:414px)': {
+            bottom: '-1.50em'
+        }
     }
 })
 
@@ -134,8 +150,8 @@ class Albums extends Component {
                     <div className="masthead gradient top-z opacity border-radius">
                         <div className={css(styles.modal)}>
                             <div className={css(styles.tracksHeading)}><h1 className="top-z jukebox-selected">Albums</h1></div>
-                            <Link to={`/add_album`} >
-                                <button className="btn btn-control btn-top-forty bttn-gradient bttn-primary">Add New Album</button>
+                            <Link to={`/add_album`} className={css(styles.addNewAlbum)}>
+                                <button className="bttn-gradient bttn-primary add">Add New Album</button>
                             </Link>
                         </div>
                         <div className="max-verticle-height horizontal-row">

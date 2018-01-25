@@ -8,7 +8,8 @@ const styles = StyleSheet.create({
         width: '100%',
         backgroundSize: 'cover',
         objectFit: 'fill',
-        height: '100vh'
+        height: '100vh',
+        zIndex: '0'
     }
 })
 

@@ -26,9 +26,7 @@
     .line-height {
         line-height: inherit;
     }
-    .album-art {
-        margin: 0 auto;
-    }
+    
 }
 
 @media (max-width: 414px) {

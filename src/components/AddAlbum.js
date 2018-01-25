@@ -27,6 +27,9 @@ const styles = StyleSheet.create({
     },
     albumElementDisplay : {
         textTransform: 'uppercase'
+    },
+    url : {
+        fontSize : '8px'
     }
 })
 
@@ -119,7 +122,7 @@ class AddAlbum extends Component {
                                 <div className={css(styles.albumElementDisplay)}>
                                     {release}
                                 </div>
-                                <div>
+                                <div className={css(styles.url)}>
                                     {artwork}
                                 </div>
                             </div>

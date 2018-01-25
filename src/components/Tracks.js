@@ -36,27 +36,18 @@ class Tracks extends Component {
         })
     }
 
-    removeTrack(val) {
-        axios.delete(`/api/tracks/${val}`).then(response => {
-            const tracks = response.data
-            this.setState({
-                tracks: tracks,
-            })
-        })
-    }
-
     render() {
         return (        
             <div className="masthead gradient top-z opacity border-radius">
                 <div className={css(styles.tracksHeading)}><h1 className="top-z jukebox-selected">Tracks</h1></div>
                 <div className="max-verticle-height">
                     {this.state.tracks.map((track, index) => {
+                        // console.log(track);
                         return <div key={index} className="tracks-view-container info-container inner-masthead-max border-radius">
                             <div className="track-element track-title flex1 line-height">'{track.title}'</div>
                             <div className="track-element track-artist flex1 line-height">{track.artist_name}</div>
                             <div className="track-element track-release flex1 line-height">{track.release_year}</div>
                             <img className="track-element album-art flex1 line-height" src={track.file_url} alt="album artwork"/>
-                            <div onClick={() => this.removeTrack(track.id)} className="track-element track-title flex1 line-height"><button class="album-remove bttn-gradient bttn-primary">Remove</button></div>
                         </div>
                     })}
                 </div>
