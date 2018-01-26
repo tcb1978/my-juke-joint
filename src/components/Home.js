@@ -4,9 +4,7 @@ import { connect } from 'react-redux'
 import axios from 'axios'
 import '../App.css'
 import './Home.css'
-import Header from './Header'
 import PrimaryNavControl from './PrimaryNavControl'
-import Footer from './Footer'
 import Auth0 from './Auth0'
 
 class Home extends Component {
@@ -26,9 +24,7 @@ class Home extends Component {
     render() {
         return (
             <div className="controller home-controller">
-                <Header />
                 {this.props.user ? <PrimaryNavControl /> : <Auth0 />}
-                <Footer />
             </div>
         )
     }

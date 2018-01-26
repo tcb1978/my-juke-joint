@@ -1,3 +1,7 @@
+.controller {
+    bottom: 75px;
+    position: relative;
+}
 
 .hidden {
     display: none;
@@ -24,10 +28,6 @@
 
 .allow-flex-grow {
     flex-grow: 1;
-}
-
-.controller {
-    margin: 4.70em 0 0 0;
 }
 
 .jukebox-selected {
