@@ -9,12 +9,6 @@
     margin: 15px auto;
 }
 
-.max-verticle-height.horizontal-row {
-    display: flex;
-    flex-direction: column-reverse;
-}
-
-
 
 @media screen and (min-width:1366px){
     .max-verticle-height.horizontal-row {
