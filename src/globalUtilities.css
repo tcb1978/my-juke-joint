@@ -1,7 +1,6 @@
 .controller {
-    bottom: 75px;
     position: relative;
-    height: 100vh;
+    top: 5em;
 }
 
 .hidden {

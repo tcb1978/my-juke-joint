@@ -8,7 +8,6 @@ import Footer from './Footer'
 function Jukebox(props) {
     return (
         <div className="controller jukebox-controller">
-            <Header />
             <JukeBoxNav/>
             {props.children}
             <Footer />

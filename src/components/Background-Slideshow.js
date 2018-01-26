@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
         objectFit: 'fill',
         height: '100vh',
         zIndex: '0'
+        // bottom: '0'
     }
 })
 
