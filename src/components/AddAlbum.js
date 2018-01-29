@@ -96,9 +96,9 @@ class AddAlbum extends Component {
         return(
         <div className="controller top-forty-controller">
             <Header />
-                <div className="max-verticle-height controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
+                <div className="controller nav-controller include-your-favorite-records top-z padded gradient border-radius opacity">
                     <h1>Include Your Favorite Records!</h1>
-                    <div className="">
+                    <div className="max-verticle-height">
                         <form onSubmit={this.handleSubmit}>
                             <div className={css(styles.formInput)}>
                                 <input className="form-input border-radius padded" type="text" name="title" placeholder="Title" value={title} onChange={this.handleTitleChange} />

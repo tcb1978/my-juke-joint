@@ -1,7 +1,11 @@
 .include-your-favorite-records {
-    margin: -50px auto;
     flex-direction: column;
     width: 80%;
+    margin: auto;
+    top: 1em;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
 
 .form-input {
@@ -13,11 +17,8 @@
     margin: 7% auto;
 }
 
-@media screen and (min-width:360px) {
-    .max-verticle-height.include-your-favorite-records {
-        max-height: 80vh;
-    }
+@media screen and (max-width:640px) and (max-height:360px) {
     .include-your-favorite-records {
-        margin: -75px auto;
+        max-height: 80vh;
     }
 }
