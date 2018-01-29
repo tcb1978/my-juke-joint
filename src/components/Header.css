@@ -16,11 +16,6 @@
     box-sizing: border-box;
 }
 
-.inner-header-left,
-.inner-header-right {
-    /* min-width: 50%; */
-}
-
 .header-avatar {
     border-radius: 100%;
     width: 3em;
@@ -30,6 +25,12 @@
 .loginLogout span {
     display: inline-block;
     cursor: pointer;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 5px;
+    position: relative;
+    bottom: .40em;
+    right: 1em;
 }
 
 .inner-header-left {
