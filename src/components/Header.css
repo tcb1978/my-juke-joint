@@ -8,8 +8,17 @@
 }
 
 .inner-header {
+    display: -ms-flexbox;
     display: flex;
+    -ms-flex-pack: justify;
     justify-content: space-between;
+    padding: 1em;
+    box-sizing: border-box;
+}
+
+.inner-header-left,
+.inner-header-right {
+    /* min-width: 50%; */
 }
 
 .header-avatar {
@@ -45,16 +54,10 @@
     .my-juke-joint {
         font-size: 3em;
     }
-    .inner-header {
-        padding: .5em 1em;
-    }
 }
 
 @media (max-width:499px) {
     .my-juke-joint {
         font-size: 2em;
-    }
-    .inner-header {
-        padding: 0.25em 1em;
     }
 }

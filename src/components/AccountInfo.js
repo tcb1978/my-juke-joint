@@ -47,7 +47,7 @@ class AccountInfo extends Component {
         return (
             <div className="controller account-info-controller">
                 
-                <div className="logged-in-as-container top-z gradient border-radius padded opacity Absolute-Center">
+                <div className="logged-in-as-container top-z gradient border-radius padded opacity">
                     {user && <div className={css(styles.acctInfo)}>
                     <h1 className={css(styles.noMargin)}>Account Info</h1>
                     <img src={user.pictureurl} alt="user" className={css(styles.avatar)} />
