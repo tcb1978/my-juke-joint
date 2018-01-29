@@ -15,7 +15,18 @@
 .header-avatar {
     border-radius: 100%;
     width: 3em;
-    padding: 10%;
+    padding: 0 0;
+}
+
+.loginLogout span {
+    display: inline-block;
+    cursor: pointer;
+}
+
+.inner-header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width:360px) and (max-height:640px) {

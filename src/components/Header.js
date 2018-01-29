@@ -3,6 +3,7 @@ import '../App.css';
 import './Header.css'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { logout } from '../ducks/reducer'
 
 class Header extends Component {
     render() {
@@ -12,7 +13,12 @@ class Header extends Component {
                     <div className="inner-header-right">
                         <Link to="/" className="my-juke-joint link">theJukeBoxy</Link>
                     </div>
-                    <div className="inner-header-left">{this.props.user ? <img src={this.props.user.pictureurl} className="header-avatar" alt="user avatar"/> : ' '}</div>
+                    <div className="inner-header-left">{this.props.user ? 
+                        <div className="loginLogout">
+                            <span onClick={this.props.logout}> Log Out </span>
+                            <img src={this.props.user.pictureurl} className="header-avatar" alt="user avatar" />
+                        </div> : ' '}
+                    </div>
                 </section>
             </header>
         )
@@ -25,4 +31,4 @@ const mapStateToProps = (state, ownProps) => {
     }
 }
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps, {logout})(Header);

@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <Slideshow />
-        {routes}
+        <div className="wrapper-main">{routes}</div>
         <Footer />
       </div>
     );

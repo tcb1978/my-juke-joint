@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         borderRadius: '100%',
         width: '10em',
         margin: '0 0',
-        '@media(min-width: 640px) and (min-height: 360px)': {
+        '@media(max-width: 640px) and (max-height: 360px)': {
             display: 'none'
         }
     },
@@ -46,20 +46,20 @@ class AccountInfo extends Component {
         const { user } = this.props
         return (
             <div className="controller account-info-controller">
-                <Header />
-                    <div className="logged-in-as-container top-z gradient border-radius padded opacity">
-                        {user && <div className={css(styles.acctInfo)}>
-                        <h1 className={css(styles.noMargin)}>Account Info</h1>
-                        <img src={user.pictureurl} alt="user" className={css(styles.avatar)} />
-                        <div className={css(styles.displayNone)}>You are logged in as:</div>
-                        <div className={css(styles.acctInfoLineItem)}>{user.name}</div>
-                        <div className={css(styles.acctInfoLineItem)}>{user.email}</div>
-                            <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
-                        </div>}
-                        {!user && <div className="not-logged-in">
-                            <Link to="/" className="login-button border-radius padded link add-line-height">Return to Login</Link>
-                        </div>}
-                    </div>
+                
+                <div className="logged-in-as-container top-z gradient border-radius padded opacity Absolute-Center">
+                    {user && <div className={css(styles.acctInfo)}>
+                    <h1 className={css(styles.noMargin)}>Account Info</h1>
+                    <img src={user.pictureurl} alt="user" className={css(styles.avatar)} />
+                    <div className={css(styles.displayNone)}>You are logged in as:</div>
+                    <div className={css(styles.acctInfoLineItem)}>{user.name}</div>
+                    <div className={css(styles.acctInfoLineItem)}>{user.email}</div>
+                        <Link to="/" className="login-button border-radius padded link">Juke Joint</Link>
+                    </div>}
+                    {!user && <div className="not-logged-in">
+                        <Link to="/" className="login-button border-radius padded link add-line-height">Return to Login</Link>
+                    </div>}
+                </div>
                 <Footer />
             </div>
 

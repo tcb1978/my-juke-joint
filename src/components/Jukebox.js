@@ -2,15 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux'
 import JukeBoxNav from './JukeBoxNav';
 import './Jukebox.css';
-import Header from './Header'
-import Footer from './Footer'
+// import Header from './Header'
+// import Footer from './Footer'
 
 function Jukebox(props) {
     return (
         <div className="controller jukebox-controller">
             <JukeBoxNav/>
             {props.children}
-            <Footer />
         </div>
     )
 }

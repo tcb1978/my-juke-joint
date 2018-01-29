@@ -9,6 +9,10 @@
     margin: 1em auto;
 }
 
+.logged-in-as-container {
+    margin: 7% auto;
+}
+
 @media screen and (min-width:360px) {
     .max-verticle-height.include-your-favorite-records {
         max-height: 80vh;

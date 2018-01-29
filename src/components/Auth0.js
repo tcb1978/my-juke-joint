@@ -38,7 +38,7 @@ class Auth0 extends Component {
     render() {
         return (
             
-            <div onClick={this.login} className="auth0-login-container gradient top-z border-radius box-shadow opacity padded">Log in</div>
+            <div onClick={this.login} className="auth0-login-container gradient top-z border-radius box-shadow opacity padded Absolute-Center">Log In</div>
             
         )
     }

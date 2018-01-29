@@ -4,11 +4,6 @@
     flex-direction: column;
 }
 
-.logged-in-as-container {
-    width: 40%;
-    margin: 1% auto; 
-}
-
 .acct-info {
     line-height: 3;
 }

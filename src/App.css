@@ -1,6 +1,9 @@
 .App {
   overflow-y: hidden;
   height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;  */
 }
 body {
   font-family: 'Roboto', sans-serif;
@@ -13,6 +16,15 @@ body .auth0-lock-container .auth0-lock-header {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #fff;
+}
+
+.wrapper-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: baseline;
+  height: 100vh;
+  vertical-align: top;
+  margin-top: 75px;
 }
 
 .mix-blend {
